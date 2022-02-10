@@ -1,8 +1,8 @@
-# Hamilton Cline
+# Taylr Zhang
 
 ## Class Project Mobile Tech
 
 ## Important Links
 
-- https://hdraws.com
-- https://hdraws.com/aau/wnm617/cline.hamilton
+- http://taylrdesigns.com/aau/wnm617/zhang.taylr
+- http://taylrdesigns.com/aau/wnm617/zhang.taylr/profile
