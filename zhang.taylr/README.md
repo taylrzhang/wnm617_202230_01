@@ -5,4 +5,8 @@
 ## Important Links
 
 - http://taylrdesigns.com/aau/wnm617/zhang.taylr
-- http://taylrdesigns.com/aau/wnm617/zhang.taylr/profile
+
+## Assignments
+
+- http://taylrdesigns.com/aau/wnm617/zhang.taylr/m01_profile
+- http://taylrdesigns.com/aau/wnm617/zhang.taylr/m02_zengarden/

@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600&display=swap');
+:root {
+    --header-height: 3rem;
+
+    --body-font: 'lato', Arial, sans-serif;
+    --header-font: 'Chakra Petch', sans-serif;
+
+
+    --font-mediem:500;
+    --font-semi-bold:600;
+
+}
+
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 var(--header-height) 0;
+    font-family: var(--body-font);
+    font-size: 1.2rem;
+    color: #fff;
+    background: linear-gradient(-45deg, #3444f5, #7d56cb, #f2825b);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0%;
+    }
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
+}
+
+
+h1 {
+    font-size: 10rem;
+    color: #fff;
+    font-family: var(--header-font);
+    text-align: center;
+    padding-top: 10rem;
+    box-shadow: inset 0 -80px 0 0 rgb(255 211 38 / 70%);
+    display: inline-block;
+
+}
+
+h2 {
+    font-family: var(--header-font);
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #fff;
+
+}
+
+h2::after {
+    content: '';
+    background:url(img/globe.svg) 60px center no-repeat;
+    clear: right;
+  content: '';
+  display: block;
+  float: left;
+  height: 100px;
+  z-index: -10;
+  margin-top: -310px;
+  max-width: 650px;
+  position: relative;
+  width: 100%;
+}
+
+p {
+    font-size: var(--normal-font-size);
+    line-height: 1.5rem;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    border:1px solid #fff;
+    border-radius: 45px;
+    padding: 0 10px;
+}
+
+abbr {
+    font-family: var(--header-font);
+    font-weight: var(--font-mediem);
+}
+
+.page-wrapper { 
+	padding: 0 175px 0 110px;  
+	margin: 0 auto; 
+	position: relative;
+	}
+
+
+section {
+    width: 100%;
+    height:80vh;
+    padding: 2rem 0 4rem;
+
+}
+
+
+.intro {
+    margin: 0 auto;
+}
+
+
+.summary {
+	clear: both; 
+	margin: 0 auto; 
+	width: 500px; 
+	
+	}
+.summary p {
+	text-align: center;
+	}
+
+h3 { 
+    font-size: 3rem;
+    box-shadow: inset 0 -25px 0 0 rgb(255 211 38 / 70%);
+    display: inline-block;
+    font-family: var(--header-font);
+    }
+
+
+
+.preamble {
+    position: relative;
+    clear: right; 
+    padding: 60px;
+    width: 1000px;
+    height: 350px;
+    margin: 0 auto;
+    margin-top: 4rem;
+    background-color: #fff;
+    border-radius: 40px;
+    }
+
+.preamble::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(25px);
+    border-radius: 40px;
+    transform: translateY(30px) scale(0.9);
+    background-color: #fff;
+}
+.preamble p {
+    position: relative;
+    z-index: 1;
+    color: #adb5bd;
+}
+
+.preamble h3{
+    position: relative;
+    z-index: 1;
+    color: #3444f5;
+    padding-bottom: 1rem;
+    margin-bottom: 0; 
+    z-index: 1;
+    box-shadow: none;
+}
+
+.main {
+    padding: 120px 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.explanation {
+    position: relative; 
+    margin: 0 auto;
+    margin-top: 3rem;
+   }
+
+.explanation h3 {
+    font-size: 3rem;
+    box-shadow: inset 0 -25px 0 0 rgb(255 211 38 / 70%);
+    display: inline-block;
+}
+
+footer {
+    margin: 80px 0;
+}
+
+footer a {
+    margin: 0 20px;
+}
+
+.sidebar {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.wrapper {
+    margin: 0;
+    position: relative;
+    width: 100%;
+}
+
+aside .wrapper a {
+    
+  }
+
+.wrapper h3 {
+    box-shadow: none;
+}
+
+aside .wrapper ul {
+    list-style: none;
+    padding: 0;
+  }
+  aside .wrapper ul li {
+    margin-bottom: 12px;
+  }
+  
+
+  aside .wrapper .design-selection .design-name {
+    display: inline-block;
+
+  }
+
+  aside .wrapper .design-selection .designer-name {
+      
+      border: none;
+  }
+
+aside .wrapper .design-selection {
+    float: left;
+    margin-right: 100px;
+    width: 50%;
+}
+
+.design-archives a {
+    border: none;
+}
+
+.zen-resources a {
+    border: none;
+}
+
+
+
+
+
+    @media (max-width: 768px) {
+        header {
+            height: 30vh;
+            
+        }
+        .intro header h1 {
+          font-size: 4rem;
+          margin: 0 auto;
+          padding-top: 3rem;
+        }
+        .intro header h1:after {
+          margin-top: 18px;
+        }
+        .intro header h2 {
+          font-size: 16px;
+          max-width: 310px;
+          
+        }
+        h2::after {
+            margin-top: -240px;
+        }
+       
+      }
+
