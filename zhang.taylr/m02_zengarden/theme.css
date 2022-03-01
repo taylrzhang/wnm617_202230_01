@@ -193,6 +193,7 @@ h3 {
     padding: 120px 80px;
     max-width: 1000px;
     margin: 0 auto;
+    margin-top: 300px;
 }
 
 .explanation {
@@ -270,9 +271,11 @@ aside .wrapper .design-selection {
 
 
 
-    @media (max-width: 768px) {
+    @media (max-width: 568px) {
         header {
             height: 30vh;
+            padding-top: 1rem;
+            text-align: center;
             
         }
         .intro header h1 {
@@ -285,12 +288,52 @@ aside .wrapper .design-selection {
         }
         .intro header h2 {
           font-size: 16px;
-          max-width: 310px;
+          max-width: 520px;
+          margin: 0 auto;
+          
           
         }
         h2::after {
             margin-top: -240px;
         }
+        .main {
+            margin-top:5rem;
+        }
+        
        
       }
 
+      @media (max-width: 968px) {
+        header {
+            height: 30vh;
+            padding-top: 1rem;
+            text-align: center;
+            
+        }
+        .intro header h1 {
+          font-size: 6rem;
+          margin: 0 auto;
+          padding-top: 3rem;
+        }
+        .intro header h1:after {
+          margin-top: 20px;
+        }
+        .intro header h2 {
+          font-size: 20px;
+          max-width: 310px;
+          margin: 0 auto;
+          
+        }
+        h2::after {
+            margin-top: -250px;
+        }
+       
+      }
+      @media (max-width: 1490px) {
+        .intro header h1 {
+            font-size: 8rem;
+        }
+        .main {
+            margin-top: 200px;
+        }
+      }

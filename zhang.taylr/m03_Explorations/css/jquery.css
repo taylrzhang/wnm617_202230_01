@@ -1,0 +1,21 @@
+.accordion {
+    --main-color: #c1c1e2;
+ }
+ 
+ .accordion dt {
+    background-color: var(--main-color);
+    padding: 0.2em 0.5em;
+    color: white;
+ }
+ 
+ .accordion dd {
+    padding: 1em;
+    margin-left: 0;
+    border:  2px solid var(--main-color);
+    border-top-width: 0;
+    display: none;
+ }
+ 
+ .accordion dt~dt {
+    margin-top: 1em;
+ }
