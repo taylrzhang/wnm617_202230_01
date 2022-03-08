@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife Tracker</title>
+
+    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="js/app.js"></script>
+    <script src="lib/js/jquery-2.2.4.min.js"></script>
+    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    
+    <section data-role="page" id="signin-page">
+        <div data-role="main">
+            <form id="signin-form" class="form">
+                <div class="form-control-signin">
+                    <!-- <label for="signin-username" class="form-label">Username</label> -->
+                    <input type="text" id="signin-name" data-role="none" class="form-input" placeholder="Username">
+                </div>
+                <div class="form-control-signin">
+                    <!-- <label for="signin-password" class="form-label">Password</label> -->
+                    <input type="password" id="signin-password" data-role="none" class="form-input" placeholder="Password">
+                </div>
+
+                <div class="form-control-signin">
+                    <a href="#explore-page" class="form-button">Sign in</a>
+                </div>
+             </form>
+
+        </div>
+    </section>
+
+    <section data-role="page" id="explore-page">
+        <header data-role="header"><h1>Hello</h1></header>
+        <div data-role="main">
+            <div class="main-content">
+                <img src="http://via.placeholder.com/300x500?text=Map" alt="">
+                <a href="#add-animal-page" class="form-button">+</a>
+            </div>
+        </div>
+        <footer data-role="footer">
+            <ul>
+                <li><a href="#explore-page">Explore</a></li>
+                <li><a href="#list-page">List</a></li>
+                <li><a href="#user-profile-page">Profile</a></li>
+
+            </ul>
+        </footer>
+
+    </section>
+
+    <section data-role="page" id="list-page">
+        <header data-role="header">
+            <h1>Tracking List</h1>
+            <ul>
+                <li class="flex-stretch"></li>
+                <li><a href="#add-animal-page" class="form-button-small">Add</a></li>
+            </ul>
+        </header>
+
+        <div data-role="main">
+            <div class="animal-profile-list">
+           <ul>
+               <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 1</p></a></li>
+               <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 2</p></a></li>
+               <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 3</p></a></li>
+               <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 4</p></a></li>
+               <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 5</p></a></li>
+               <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 6</p></a></li>
+           </ul>
+        </div>
+        </div>
+
+        <footer data-role="footer">
+            <ul>
+                <li><a href="#explore-page">Explore</a></li>
+                <li><a href="#list-page">List</a></li>
+                <li><a href="#user-profile-page">Profile</a></li>
+
+            </ul>
+        </footer>
+
+    </section>
+
+    <section data-role="page" id="user-profile-page">
+        <header data-role="header">
+            <li><a href="#" data-rel="back">back</a></li>
+                <li class="flex-stretch"></li>
+                
+            
+        </header>
+        <div data-role="main"><p>user profile</p>
+            <a href="#user-edit-page" class="form-button">edit</a>
+        </div>
+        
+        <footer data-role="footer">
+            <ul>
+                <li><a href="#explore-page">Explore</a></li>
+                <li><a href="#list-page">List</a></li>
+                <li><a href="#user-profile-page">Profile</a></li>
+
+            </ul>
+        </footer>
+
+    </section>
+
+    <section data-role="page" id="user-edit-page">
+        <header data-role="header">
+            <h1>Edit user</h1>
+            <ul>
+                <li><a href="#" data-rel="back">back</a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#user-profile-page">save</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            form
+        </div>
+        <footer data-role="footer">
+            <ul>
+                <li><a href="#explore-page">Explore</a></li>
+                <li><a href="#list-page">List</a></li>
+                <li><a href="#user-profile-page">Profile</a></li>
+
+            </ul>
+        </footer>
+
+    </section>
+
+    <section data-role="page" id="animal-profile-page">
+        
+        <header data-role="header">
+            <h1>Animal Title</h1>
+            <ul>
+                
+                <li class="flex-stretch"></li>
+                <li><a href="#explore-page">close</a></li>
+            </ul>
+        </header>
+
+        <div data-role="main">
+            
+            
+            <div class="animal-profile-content">
+            <img src="http://via.placeholder.com/150" alt="">   
+            <img src="http://via.placeholder.com/150" alt=""> 
+            
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis, doloremque dicta. Iste modi vero ipsa perferendis vel, id explicabo sapiente accusamus quod. Molestiae iure nisi nihil dolorum hic animi veritatis!</p>
+
+
+            </div>
+        </div>
+    
+    </section>
+
+    <section data-role="page" id="add-animal-page">
+        
+        <header data-role="header">
+            <h1>Animal Title</h1>
+            <ul>
+                <li><a href="#" data-rel="back">back</a></li>
+                <li class="flex-stretch"></li>
+                
+            </ul>
+        </header>
+
+        <div data-role="main">
+            
+            
+            <div class="animal-profile-content">
+                <img src="http://via.placeholder.com/50" alt="">   
+                <img src="http://via.placeholder.com/50" alt=""> 
+            
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis, doloremque dicta. Iste modi vero ipsa perferendis vel, id explicabo sapiente accusamus quod. Molestiae iure nisi nihil dolorum hic animi veritatis!</p>
+
+            <a href="#animal-profile-page" class="form-button">save</a>
+
+            </div>
+        </div>
+    
+    </section>
+
+
+</body>
+</html>
