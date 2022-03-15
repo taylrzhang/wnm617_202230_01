@@ -2,34 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wildlife Tracker</title>
+
 
     <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
 
     <link rel="stylesheet" href="css/app.css">
 
-    <script src="js/app.js"></script>
+    
+
     <script src="lib/js/jquery-2.2.4.min.js"></script>
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://kit.fontawesome.com/063abf5327.js" crossorigin="anonymous"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/signin.js"></script>
 </head>
 <body>
     
+    <section data-role="page" id="onboarding-page">
+            <div data-role="main" class="display-flex flex-column">
+                <div class="flex-stretch"></div>
+                <div class="logo">
+                    <img src="img/polar-panda.png" alt="">
+                    <p>Outside</p>
+                </div>
+                <div class="flex-stretch"></div>
+                <div class="form-control-signin">
+                    <a href="#signin-page" class="form-button">Explore Now <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+            </div>
+    </section>
+
     <section data-role="page" id="signin-page">
-        <div data-role="main">
-            <form id="signin-form" class="form">
+        <div data-role="main" class="display-flex flex-column">
+            <div class="flex-stretch"></div>
+            
+            <form id="signin-form" class="form" data-ajax="false">
+                <h1>Welcome back</h1>
                 <div class="form-control-signin">
                     <!-- <label for="signin-username" class="form-label">Username</label> -->
-                    <input type="text" id="signin-name" data-role="none" class="form-input" placeholder="Username">
+                    <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Username">
                 </div>
                 <div class="form-control-signin">
                     <!-- <label for="signin-password" class="form-label">Password</label> -->
                     <input type="password" id="signin-password" data-role="none" class="form-input" placeholder="Password">
+                   
                 </div>
-
+                
+               
+                
+                
                 <div class="form-control-signin">
-                    <a href="#explore-page" class="form-button">Sign in</a>
+                    <button type="submit" class="form-button" data-role="none" >Sign in <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+                <div class="signup-link">
+                    <p>No account? 
+                    <a href="#signup-page" class="signup-a">Create one</a>
+                    </p>
                 </div>
              </form>
 
@@ -37,18 +69,38 @@
     </section>
 
     <section data-role="page" id="explore-page">
-        <header data-role="header"><h1>Hello</h1></header>
-        <div data-role="main">
-            <div class="main-content">
-                <img src="http://via.placeholder.com/300x500?text=Map" alt="">
-                <a href="#add-animal-page" class="form-button">+</a>
-            </div>
+        <header data-role="header">
+            
+            <h1>Found something outside? ️🐼</h1>
+             
+        </header>
+        <div data-role="main" class="map-placeholder">
+            
+                <div class="floater bottom right"><a href="#add-animal-page" class=" add-button"><i class="fa-solid fa-plus"></i></a></div>
+
+                <div class="floater" style="top: 10rem; left: 6rem; font-size: 2rem; color: #EE442B; ">
+                    <a href="#animal-profile-page"><i class="fa-solid fa-location-dot"></i></a>
+                </div>
+            
         </div>
         <footer data-role="footer">
             <ul>
-                <li><a href="#explore-page">Explore</a></li>
-                <li><a href="#list-page">List</a></li>
-                <li><a href="#user-profile-page">Profile</a></li>
+                <li>
+                    <a href="#explore-page">
+                    <span class="icon">
+                        <i class="fa-solid fa-compass footer-icon"></i>
+                    </span>
+                    <span class="page-name" >Explore</span>
+                    </a>
+                </li>
+                <li><a href="#list-page">
+                    <span class="icon"><i class="fa-solid fa-list"></i></span>
+                    <span class="page-name" >List</span>
+                </a></li>
+                <li><a href="#user-profile-page">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="page-name" >Profile</span>
+                </a></li>
 
             </ul>
         </footer>
@@ -60,32 +112,66 @@
             <h1>Tracking List</h1>
             <ul>
                 <li class="flex-stretch"></li>
-                <li><a href="#add-animal-page" class="form-button-small">Add</a></li>
+                <li><a href="#" data-activate="#list-add-animal-modal" class="">Add</a></li>
             </ul>
         </header>
 
-        <div data-role="main">
+        <div data-role="main" class="overscroll">
             <div class="animal-profile-list">
            <ul>
-               <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 1</p></a></li>
+               <li>
+                   <a href="#animal-profile-page">
+                       <img src="http://via.placeholder.com/40" alt="">
+                       <p>animal 1</p>
+                    </a>
+                </li>
                <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 2</p></a></li>
                <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 3</p></a></li>
                <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 4</p></a></li>
                <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 5</p></a></li>
                <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 6</p></a></li>
-           </ul>
+               <li>
+                <a href="#animal-profile-page">
+                    <img src="http://via.placeholder.com/40" alt="">
+                    <p>animal 1</p>
+                 </a>
+             </li>
+            </ul>
         </div>
         </div>
 
         <footer data-role="footer">
             <ul>
-                <li><a href="#explore-page">Explore</a></li>
-                <li><a href="#list-page">List</a></li>
-                <li><a href="#user-profile-page">Profile</a></li>
+                <li>
+                    <a href="#explore-page" class="active">
+                    <span class="icon">
+                        <i class="fa-solid fa-compass footer-icon"></i>
+                    </span>
+                    <span class="page-name" >Explore</span>
+                    </a>
+                </li>
+                <li><a href="#list-page">
+                    <span class="icon">
+                        <i class="fa-solid fa-list-radio"></i>
+                    </span>
+                    <span class="page-name" >List</span>
+                </a></li>
+                <li><a href="#user-profile-page">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="page-name" >Profile</span>
+                </a></li>
 
             </ul>
         </footer>
 
+            <div id="list-add-animal-modal" class="modal">
+                <div class="modal-back"></div>
+                <div class="modal-popup">
+                    <div class="modal-head"></div>
+                    <div class="modal-body"></div>
+                    <div class="modal-foot"></div>
+                </div>
+            </div>
     </section>
 
     <section data-role="page" id="user-profile-page">
@@ -97,13 +183,29 @@
         </header>
         <div data-role="main"><p>user profile</p>
             <a href="#user-edit-page" class="form-button">edit</a>
+            <a href="#" class="js-logout">Logout</a>
         </div>
         
         <footer data-role="footer">
             <ul>
-                <li><a href="#explore-page">Explore</a></li>
-                <li><a href="#list-page">List</a></li>
-                <li><a href="#user-profile-page">Profile</a></li>
+                <li>
+                    <a href="#explore-page" class="active">
+                    <span class="icon">
+                        <i class="fa-solid fa-compass footer-icon"></i>
+                    </span>
+                    <span class="page-name" >Explore</span>
+                    </a>
+                </li>
+                <li><a href="#list-page">
+                    <span class="icon">
+                        <i class="fa-solid fa-list-radio"></i>
+                    </span>
+                    <span class="page-name" >List</span>
+                </a></li>
+                <li><a href="#user-profile-page">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="page-name" >Profile</span>
+                </a></li>
 
             </ul>
         </footer>
@@ -122,14 +224,7 @@
         <div data-role="main">
             form
         </div>
-        <footer data-role="footer">
-            <ul>
-                <li><a href="#explore-page">Explore</a></li>
-                <li><a href="#list-page">List</a></li>
-                <li><a href="#user-profile-page">Profile</a></li>
-
-            </ul>
-        </footer>
+        
 
     </section>
 
