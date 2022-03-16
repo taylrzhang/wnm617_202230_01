@@ -51,9 +51,7 @@
                     <input type="password" id="signin-password" data-role="none" class="form-input" placeholder="Password">
                    
                 </div>
-                
-               
-                
+        
                 
                 <div class="form-control-signin">
                     <button type="submit" class="form-button" data-role="none" >Sign in <i class="fa-solid fa-arrow-right"></i></button>
@@ -71,18 +69,184 @@
     <section data-role="page" id="explore-page">
         <header data-role="header">
             
-            <h1>Found something outside? ️🐼</h1>
+            
+            <ul class="flex-align-center">
+                <li class="flex-none">
+                    <h1>Found something outside?</h1>
+                    
+                </li>
+                <li class="flex-stretch"></li>
+                <li class="flex-none">
+                    <a href="#add-animal-location-page" class="add-button"><i class="fa-solid fa-square-plus" style="color: #fff;"></i></a>
+                </li>
+            </ul>
              
         </header>
         <div data-role="main" class="map-placeholder">
             
-                <div class="floater bottom right"><a href="#add-animal-page" class=" add-button"><i class="fa-solid fa-plus"></i></a></div>
+                
 
-                <div class="floater" style="top: 10rem; left: 6rem; font-size: 2rem; color: #EE442B; ">
-                    <a href="#animal-profile-page"><i class="fa-solid fa-location-dot"></i></a>
+                <div class="floater" style="top: 10rem; left: 6rem; font-size: 2rem; color: #EE442B;" data-activate="#map-drawer">
+                   <i class="fa-solid fa-location-dot"></i>
                 </div>
             
         </div>
+        <footer data-role="footer">
+            <ul class="nav-icon-set">
+                <li>
+                    <a href="#explore-page">
+                    <span class="icon">
+                        <i class="fa-solid fa-compass footer-icon"></i>
+                    </span>
+                    <span class="page-name" >Explore</span>
+                    </a>
+                </li>
+                <li><a href="#list-page">
+                    <span class="icon"><i class="fa-solid fa-list"></i></span>
+                    <span class="page-name" >List</span>
+                </a></li>
+                <li><a href="#user-profile-page">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="page-name" >Profile</span>
+                </a></li>
+
+            </ul>
+        </footer>
+
+        <div id="map-drawer" class="modal">
+            <div class="modal-back transparent passthrough" data-deactivate="#map-drawer"></div>
+            <div class="modal-drawer bottom">
+                <div class="modal-head display-flex">
+                    <div class="flex-none"><h1 class="modal-name">animal title</h1>
+                    <h4>Aug 19,2021</h4></div>
+                    <div class="flex-stretch"></div>
+                    <div class="flex-none close-button"  data-deactivate="#map-drawer"><i class="fa-solid fa-xmark"></i></div>
+                </div>
+                <div class="modal-body overscroll">
+                    <div class="display-flex">
+                        <div class="flex-column "><img class="modal-img" src="img/marmot1.jpg" alt=""></div>
+                        <div class="flex-column"><img  class="modal-img"src="img/marmot2.jpg" alt=""></div>
+                    </div>
+                    <div class="display-flex">
+                        <div class="flex-none"><h3>Details</h3></div>
+                        <div class="flex-stretch"></div>
+                        <div class="flex-none"><a href="#animal-edit-page" class="form-button-small">Edit</a></div>
+                    </div>
+                    
+                        <div class="modal-container">
+                            <h6>Type</h6>
+                            <p>Groundhog</p>
+                            <h6>Species</h6>
+                            <p>Marmot</p>
+                            <h6>Description</h6>
+                            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section data-role="page" id="list-page">
+        <header data-role="header">
+            <h1>Tracking List</h1>
+            
+            <ul >
+                <li class="flex-stretch"></li>
+                <li ><a href="#add-animal-location-page" class="add-button"><i class="fa-solid fa-square-plus" style="color: #fff;"></i></a></li>
+            </ul >
+        </header>
+
+        <div data-role="main" class="overscroll">
+            
+            <div class="display-flex ">
+                <div class="search flex-stretch">
+                    <form class="hotdog">
+                        <input type="search" data-role="none" placeholder="Search"></form>
+                </div>
+            </div>
+
+        <div class="animal-profile-list">
+           
+               <ul>
+                   <li>
+                       <a href="#animal-profile-page">
+                           <div class="animal-list-img"><img src="http://via.placeholder.com/100" alt=""></div>
+                           <div class="animal-list-body">
+                               <div class="animal-list-name">Animal 1</div>
+                               <div class="animal-list-type">Type</div>
+                               <div class="animal-list-species">Species</div>
+                           </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#animal-profile-page">
+                            <div class="animal-list-img"><img src="http://via.placeholder.com/100" alt=""></div>
+                            <div class="animal-list-body">
+                                <div class="animal-list-name">Animal 2</div>
+                                <div class="animal-list-type">Type</div>
+                                <div class="animal-list-species">Species</div>
+                            </div>
+                         </a>
+                     </li>
+                     <li>
+                        <a href="#animal-profile-page">
+                            <div class="animal-list-img"><img src="http://via.placeholder.com/100" alt=""></div>
+                            <div class="animal-list-body">
+                                <div class="animal-list-name">Animal 3</div>
+                                <div class="animal-list-type">Type</div>
+                                <div class="animal-list-species">Species</div>
+                            </div>
+                         </a>
+                     </li>
+                     <li>
+                        <a href="#animal-profile-page">
+                            <div class="animal-list-img"><img src="http://via.placeholder.com/100" alt=""></div>
+                            <div class="animal-list-body">
+                                <div class="animal-list-name">Animal 4</div>
+                                <div class="animal-list-type">Type</div>
+                                <div class="animal-list-species">Species</div>
+                            </div>
+                         </a>
+                     </li>
+                     <li>
+                        <a href="#animal-profile-page">
+                            <div class="animal-list-img"><img src="http://via.placeholder.com/100" alt=""></div>
+                            <div class="animal-list-body">
+                                <div class="animal-list-name">Animal 5</div>
+                                <div class="animal-list-type">Type</div>
+                                <div class="animal-list-species">Species</div>
+                            </div>
+                         </a>
+                     </li>
+                     <li>
+                        <a href="#animal-profile-page">
+                            <div class="animal-list-img"><img src="http://via.placeholder.com/100" alt=""></div>
+                            <div class="animal-list-body">
+                                <div class="animal-list-name">Animal 6</div>
+                                <div class="animal-list-type">Type</div>
+                                <div class="animal-list-species">Species</div>
+                            </div>
+                         </a>
+                     </li>
+                     <li>
+                        <a href="#animal-profile-page">
+                            <div class="animal-list-img"><img src="http://via.placeholder.com/100" alt=""></div>
+                            <div class="animal-list-body">
+                                <div class="animal-list-name">Animal 7</div>
+                                <div class="animal-list-type">Type</div>
+                                <div class="animal-list-species">Species</div>
+                            </div>
+                         </a>
+                     </li>
+                    
+                </ul>
+          
+        </div>
+      
+        </div>
+
         <footer data-role="footer">
             <ul>
                 <li>
@@ -105,73 +269,182 @@
             </ul>
         </footer>
 
+            
     </section>
 
-    <section data-role="page" id="list-page">
-        <header data-role="header">
-            <h1>Tracking List</h1>
+    
+
+    <section data-role="page" id="animal-profile-page">
+        
+        
+
+        <div data-role="main" class="map-placeholder">
+            
+            <div class="floater" style="top: 10rem; left: 10rem; font-size: 2rem; color: #EE442B;" data-activate="#map-drawer">
+                <i class="fa-solid fa-location-dot"></i>
+             </div>
+            
+            <div class="modal-drawer-fixed bottom">
+                <div class="modal-head display-flex">
+                    <div class="flex-none"><h1 class="modal-name">animal title</h1>
+                    <h4>Aug 19,2021</h4></div>
+                    <div class="flex-stretch"></div>
+                    <div class="flex-none close-button" ><a href="#" data-rel="back"><i class="fa-solid fa-xmark"></i></a></div>
+                </div>
+                <div class="modal-body overscroll">
+                    <div class="display-flex">
+                        <div class="flex-column "><img class="modal-img" src="img/marmot1.jpg" alt=""></div>
+                        <div class="flex-column"><img  class="modal-img"src="img/marmot2.jpg" alt=""></div>
+                    </div>
+                    <div class="display-flex">
+                        <div class="flex-none"><h3>Details</h3></div>
+                        <div class="flex-stretch"></div>
+                        <div class="flex-none"><a href="#animal-edit-page" class="form-button-small">Edit</a></div>
+                    </div>
+                    
+                        <div class="modal-container">
+                            <h6>Type</h6>
+                            <p>Groundhog</p>
+                            <h6>Species</h6>
+                            <p>Marmot</p>
+                            <h6>Description</h6>
+                            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                        </div>
+                    
+                </div>
+            </div> 
+
+
+            
+        </div>
+    
+    </section>
+
+    <section data-role="page" id="add-animal-location-page">
+        
+            <header data-role="header">
+                <h1>Set Location</h1>
             <ul>
+                <li><a href="#" data-rel="back">Cancel</a></li>
+                <li class="flex-stretch"></li>   
+            </ul>
+            </header>
+
+            <div data-role="main" class="map-placeholder">
+            
+                <div class="floater" style="top: 10rem; left: 6rem; font-size: 2rem; color: #EE442B;" data-activate="#add-drawer">
+                   <i class="fa-solid fa-location-dot"></i>
+                </div>
+            </div>
+            
+            <div id="add-drawer" class="modal">
+                <div class="modal-back transparent passthrough" data-deactivate="#add-drawer"></div>
+                <div class="modal-drawer half-bottom">
+                    <div class="modal-head display-flex">
+                        <div class="flex-none "><h1 class="modal-name">Dopped pin</h1>
+                        <h4>37.45976 N, 122.23725 W</h4></div>
+                        <div class="flex-stretch"></div>
+                        <div class="flex-none"  data-deactivate="#add-drawer">
+                            <div class="close-button"><i class="fa-solid fa-xmark"></i></div>
+                        </div>
+                    </div>
+                    <div class="modal-body overscroll">
+                        <div class="display-flex">
+                            <div class="search flex-stretch">
+                                <form class="hotdog">
+                                    <input type="search" data-role="none" placeholder="Search"></form>
+                            </div>
+                        </div>
+                        <div class="display-flex flex-align-center">
+                            <div class="flex-none"><h3>Saved ></h3></div>
+                            <div class="flex-stretch"></div>
+                            <div class="flex-none"><a href="#animal-edit-page" class="form-button-small">Create</a></div>
+                        </div>
+                        <div class="animal-profile-list">
+                            <ul>
+                                <li>
+                                    <a href="#add-animal-description-page" >
+                                        <img src="http://via.placeholder.com/40" alt="">
+                                        <p>animal 0</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#add-animal-description-page" >
+                                        <img src="http://via.placeholder.com/40" alt="">
+                                        <p>animal 0</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#add-animal-description-page" >
+                                        <img src="http://via.placeholder.com/40" alt="">
+                                        <p>animal 0</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#add-animal-description-page" >
+                                        <img src="http://via.placeholder.com/40" alt="">
+                                        <p>animal 0</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#add-animal-description-page" >
+                                        <img src="http://via.placeholder.com/40" alt="">
+                                        <p>animal 0</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                            
+                        
+                    </div>
+                </div>
+            </div>
+           
+        
+        
+        
+    </section>
+
+    <section data-role="page" id="add-animal-description-page">
+        
+        <header data-role="header">
+            <h1>Animal Title</h1>
+            <ul>
+                <li><a href="#" data-rel="back">back</a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#" data-activate="#list-add-animal-modal" class="">Add</a></li>
+                
             </ul>
         </header>
 
-        <div data-role="main" class="overscroll">
-            <div class="animal-profile-list">
-           <ul>
-               <li>
-                   <a href="#animal-profile-page">
-                       <img src="http://via.placeholder.com/40" alt="">
-                       <p>animal 1</p>
-                    </a>
-                </li>
-               <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 2</p></a></li>
-               <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 3</p></a></li>
-               <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 4</p></a></li>
-               <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 5</p></a></li>
-               <li><a href="#animal-profile-page"><img src="http://via.placeholder.com/40" alt=""><p>animal 6</p></a></li>
-               <li>
-                <a href="#animal-profile-page">
-                    <img src="http://via.placeholder.com/40" alt="">
-                    <p>animal 1</p>
-                 </a>
-             </li>
-            </ul>
-        </div>
-        </div>
+        <div data-role="main" style="background-color: #F9F9F9;">
+           
+                    
+                    <form id="add-animal-form" class="form" data-ajax="false">
+                        
+                            <img src="http://via.placeholder.com/50" alt="">
+                    <img src="http://via.placeholder.com/50" alt="">
+                
+                        <h6>Type</h6>
+                            <input type="text" class="form-input" data-role="none" placeholder="type">
+                                
+                            </input>
+                       
+                        <h6>Species</h6>
+                        <input type="text" class="form-input" data-role="none" placeholder="Speices">
+                        <h6>Description</h6>
+                        <input type="text" class="form-input" data-role="none" placeholder="Description">
+                        
+                        <div class="form-control">
+                            <button type="submit" class="form-button" data-role="none">Save</button>
+                        </div>
+                    </form>
+                
 
-        <footer data-role="footer">
-            <ul>
-                <li>
-                    <a href="#explore-page" class="active">
-                    <span class="icon">
-                        <i class="fa-solid fa-compass footer-icon"></i>
-                    </span>
-                    <span class="page-name" >Explore</span>
-                    </a>
-                </li>
-                <li><a href="#list-page">
-                    <span class="icon">
-                        <i class="fa-solid fa-list-radio"></i>
-                    </span>
-                    <span class="page-name" >List</span>
-                </a></li>
-                <li><a href="#user-profile-page">
-                    <span class="icon"><i class="fa-solid fa-user"></i></span>
-                    <span class="page-name" >Profile</span>
-                </a></li>
+            
 
-            </ul>
-        </footer>
-
-            <div id="list-add-animal-modal" class="modal">
-                <div class="modal-back"></div>
-                <div class="modal-popup">
-                    <div class="modal-head"></div>
-                    <div class="modal-body"></div>
-                    <div class="modal-foot"></div>
-                </div>
             </div>
+        
+    
     </section>
 
     <section data-role="page" id="user-profile-page">
@@ -189,7 +462,7 @@
         <footer data-role="footer">
             <ul>
                 <li>
-                    <a href="#explore-page" class="active">
+                    <a href="#explore-page">
                     <span class="icon">
                         <i class="fa-solid fa-compass footer-icon"></i>
                     </span>
@@ -197,9 +470,7 @@
                     </a>
                 </li>
                 <li><a href="#list-page">
-                    <span class="icon">
-                        <i class="fa-solid fa-list-radio"></i>
-                    </span>
+                    <span class="icon"><i class="fa-solid fa-list"></i></span>
                     <span class="page-name" >List</span>
                 </a></li>
                 <li><a href="#user-profile-page">
@@ -226,59 +497,6 @@
         </div>
         
 
-    </section>
-
-    <section data-role="page" id="animal-profile-page">
-        
-        <header data-role="header">
-            <h1>Animal Title</h1>
-            <ul>
-                
-                <li class="flex-stretch"></li>
-                <li><a href="#explore-page">close</a></li>
-            </ul>
-        </header>
-
-        <div data-role="main">
-            
-            
-            <div class="animal-profile-content">
-            <img src="http://via.placeholder.com/150" alt="">   
-            <img src="http://via.placeholder.com/150" alt=""> 
-            
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis, doloremque dicta. Iste modi vero ipsa perferendis vel, id explicabo sapiente accusamus quod. Molestiae iure nisi nihil dolorum hic animi veritatis!</p>
-
-
-            </div>
-        </div>
-    
-    </section>
-
-    <section data-role="page" id="add-animal-page">
-        
-        <header data-role="header">
-            <h1>Animal Title</h1>
-            <ul>
-                <li><a href="#" data-rel="back">back</a></li>
-                <li class="flex-stretch"></li>
-                
-            </ul>
-        </header>
-
-        <div data-role="main">
-            
-            
-            <div class="animal-profile-content">
-                <img src="http://via.placeholder.com/50" alt="">   
-                <img src="http://via.placeholder.com/50" alt=""> 
-            
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis, doloremque dicta. Iste modi vero ipsa perferendis vel, id explicabo sapiente accusamus quod. Molestiae iure nisi nihil dolorum hic animi veritatis!</p>
-
-            <a href="#animal-profile-page" class="form-button">save</a>
-
-            </div>
-        </div>
-    
     </section>
 
 
