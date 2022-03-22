@@ -44,11 +44,11 @@
                 <h1>Welcome back</h1>
                 <div class="form-control-signin">
                     <!-- <label for="signin-username" class="form-label">Username</label> -->
-                    <input type="text" id="signin-username" data-role="none" class="form-input" placeholder="Username">
+                    <input type="text" id="signin-username" data-role="none" class="form-input-signin" placeholder="Username">
                 </div>
                 <div class="form-control-signin">
                     <!-- <label for="signin-password" class="form-label">Password</label> -->
-                    <input type="password" id="signin-password" data-role="none" class="form-input" placeholder="Password">
+                    <input type="password" id="signin-password" data-role="none" class="form-input-signin" placeholder="Password">
                    
                 </div>
         
@@ -67,51 +67,27 @@
     </section>
 
     <section data-role="page" id="explore-page">
-        <header data-role="header">
+        <header data-role="header" class="animal-title display-flex">
             
             
-            <ul class="flex-align-center">
-                <li class="flex-none">
-                    <h1>Found something outside?</h1>
-                    
-                </li>
-                <li class="flex-stretch"></li>
-                <li class="flex-none">
-                    <a href="#add-animal-location-page" class="add-button"><i class="fa-solid fa-square-plus" style="color: #fff;"></i></a>
-                </li>
-            </ul>
+            
+                    <div class="display-block">
+                        <h3>Found something outside?</h3>
+                        <h4>Add an animal to capture what you see.</h4>
+                    </div>
+               
+                    <div class="display-block"><a href="#add-animal-location-page" class="add-button"><i class="fa-solid fa-square-plus" style="color: #fff;"></i></a></div>
+                
              
         </header>
         <div data-role="main" class="map-placeholder">
             
-                
-
                 <div class="floater" style="top: 10rem; left: 6rem; font-size: 2rem; color: #EE442B;" data-activate="#map-drawer">
                    <i class="fa-solid fa-location-dot"></i>
                 </div>
             
         </div>
-        <footer data-role="footer">
-            <ul class="nav-icon-set">
-                <li>
-                    <a href="#explore-page">
-                    <span class="icon">
-                        <i class="fa-solid fa-compass footer-icon"></i>
-                    </span>
-                    <span class="page-name" >Explore</span>
-                    </a>
-                </li>
-                <li><a href="#list-page">
-                    <span class="icon"><i class="fa-solid fa-list"></i></span>
-                    <span class="page-name" >List</span>
-                </a></li>
-                <li><a href="#user-profile-page">
-                    <span class="icon"><i class="fa-solid fa-user"></i></span>
-                    <span class="page-name" >Profile</span>
-                </a></li>
-
-            </ul>
-        </footer>
+        <footer data-role="footer" data-template="#footer-template"></footer>
 
         <div id="map-drawer" class="modal">
             <div class="modal-back transparent passthrough" data-deactivate="#map-drawer"></div>
@@ -119,7 +95,7 @@
                 <div class="modal-head display-flex">
                     <div class="flex-none"><h1 class="modal-name">animal title</h1>
                     <h4>Aug 19,2021</h4></div>
-                    <div class="flex-stretch"></div>
+                    
                     <div class="flex-none close-button"  data-deactivate="#map-drawer"><i class="fa-solid fa-xmark"></i></div>
                 </div>
                 <div class="modal-body overscroll">
@@ -127,10 +103,9 @@
                         <div class="flex-column "><img class="modal-img" src="img/marmot1.jpg" alt=""></div>
                         <div class="flex-column"><img  class="modal-img"src="img/marmot2.jpg" alt=""></div>
                     </div>
-                    <div class="display-flex">
-                        <div class="flex-none"><h3>Details</h3></div>
-                        <div class="flex-stretch"></div>
-                        <div class="flex-none"><a href="#animal-edit-page" class="form-button-small">Edit</a></div>
+                    <div class="display-flex animal-title">
+                        <h3>Details</h3>
+                        <a href="#animal-edit-page" class="form-button-small">Edit</a>
                     </div>
                     
                         <div class="modal-container">
@@ -150,12 +125,14 @@
 
     <section data-role="page" id="list-page">
         <header data-role="header">
-            <h1>Tracking List</h1>
             
-            <ul >
-                <li class="flex-stretch"></li>
-                <li ><a href="#add-animal-location-page" class="add-button"><i class="fa-solid fa-square-plus" style="color: #fff;"></i></a></li>
-            </ul >
+                <h1>Tracking List</h1>
+                
+                <ul >
+                    <li class="flex-stretch"></li>
+                    <li ><a href="#add-animal-location-page" class="add-button"><i class="fa-solid fa-square-plus" style="color: #fff;"></i></a></li>
+                </ul >
+            
         </header>
 
         <div data-role="main" class="overscroll">
@@ -247,27 +224,7 @@
       
         </div>
 
-        <footer data-role="footer">
-            <ul>
-                <li>
-                    <a href="#explore-page">
-                    <span class="icon">
-                        <i class="fa-solid fa-compass footer-icon"></i>
-                    </span>
-                    <span class="page-name" >Explore</span>
-                    </a>
-                </li>
-                <li><a href="#list-page">
-                    <span class="icon"><i class="fa-solid fa-list"></i></span>
-                    <span class="page-name" >List</span>
-                </a></li>
-                <li><a href="#user-profile-page">
-                    <span class="icon"><i class="fa-solid fa-user"></i></span>
-                    <span class="page-name" >Profile</span>
-                </a></li>
-
-            </ul>
-        </footer>
+        <footer data-role="footer" data-template="#footer-template"></footer>
 
             
     </section>
@@ -296,9 +253,9 @@
                         <div class="flex-column "><img class="modal-img" src="img/marmot1.jpg" alt=""></div>
                         <div class="flex-column"><img  class="modal-img"src="img/marmot2.jpg" alt=""></div>
                     </div>
-                    <div class="display-flex">
-                        <div class="flex-none"><h3>Details</h3></div>
-                        <div class="flex-stretch"></div>
+                    <div class="display-flex animal-title">
+                        <div class="flex-none "><h3>Details</h3></div>
+                        
                         <div class="flex-none"><a href="#animal-edit-page" class="form-button-small">Edit</a></div>
                     </div>
                     
@@ -358,7 +315,7 @@
                         <div class="display-flex flex-align-center">
                             <div class="flex-none"><h3>Saved ></h3></div>
                             <div class="flex-stretch"></div>
-                            <div class="flex-none"><a href="#animal-edit-page" class="form-button-small">Create</a></div>
+                            <div class="flex-none"><a href="#add-animal-description-page" class="form-button-small">Create</a></div>
                         </div>
                         <div class="animal-profile-list">
                             <ul>
@@ -410,13 +367,13 @@
         <header data-role="header">
             <h1>Animal Title</h1>
             <ul>
-                <li><a href="#" data-rel="back">back</a></li>
+                <li><a href="#" data-rel="back" class="back-button"><i class="fa-solid fa-angle-left"></i></a></li>
                 <li class="flex-stretch"></li>
-                
+                <li><a href="#explore-page" class="form-button-small">Save</a></li>
             </ul>
         </header>
 
-        <div data-role="main" style="background-color: #F9F9F9;">
+        <div data-role="main" >
            
                     
                     <form id="add-animal-form" class="form" data-ajax="false">
@@ -434,11 +391,10 @@
                         <h6>Description</h6>
                         <input type="text" class="form-input" data-role="none" placeholder="Description">
                         
-                        <div class="form-control">
-                            <button type="submit" class="form-button" data-role="none">Save</button>
-                        </div>
+                        
                     </form>
-                
+                    
+                   
 
             
 
@@ -449,37 +405,66 @@
 
     <section data-role="page" id="user-profile-page">
         <header data-role="header">
-            <li><a href="#" data-rel="back">back</a></li>
+               <h1>Profile</h1>
+            <ul class="display-flex">
                 <li class="flex-stretch"></li>
-                
-            
+                <li class="flex-none"><a href="#user-edit-page" class="form-button-small">Edit</a></li>
+            </ul>
         </header>
-        <div data-role="main"><p>user profile</p>
-            <a href="#user-edit-page" class="form-button">edit</a>
-            <a href="#" class="js-logout">Logout</a>
+        <div data-role="main">
+            <div class="user-profile">
+                <img src="http://via.placeholder.com/100" alt="" >
+                <div class="user-profile-info ">
+                    <div class="display-flex flex-align-center">
+                        <div class="flex-none info-icon"><i class="fa-solid fa-user"></i></div>
+                        <div class="flex-none">
+                            <h6>Username</h6>
+                            <p>user</p>
+                        </div>
+                    </div>
+                    <div class="display-flex flex-align-center">
+                        <div class="flex-none info-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="flex-none">
+                            <h6>Email</h6>
+                    <p>username@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="display-flex flex-align-center">
+                        <div class="flex-none info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="flex-none">
+                            <h6>Location</h6>
+                    <p>San Jose,CA</p>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="setting">
+                        <div class="display-flex flex-align-center">
+                            <div class="flex-none info-icon"><i class="fa-solid fa-gear"></i></div>
+                            <div class="flex-none info-text">    
+                            <p>Setting</p>
+                            </div>
+                        </div>
+                        <a href="#onboarding-page">
+                            <div class="display-flex flex-align-center">
+                                <div class="flex-none info-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></i></div>
+                                <div class="flex-none info-text">
+                                <p>Logout</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+            
+
+            
         </div>
         
-        <footer data-role="footer">
-            <ul>
-                <li>
-                    <a href="#explore-page">
-                    <span class="icon">
-                        <i class="fa-solid fa-compass footer-icon"></i>
-                    </span>
-                    <span class="page-name" >Explore</span>
-                    </a>
-                </li>
-                <li><a href="#list-page">
-                    <span class="icon"><i class="fa-solid fa-list"></i></span>
-                    <span class="page-name" >List</span>
-                </a></li>
-                <li><a href="#user-profile-page">
-                    <span class="icon"><i class="fa-solid fa-user"></i></span>
-                    <span class="page-name" >Profile</span>
-                </a></li>
-
-            </ul>
-        </footer>
+        <footer data-role="footer" data-template="#footer-template"></footer>
 
     </section>
 
@@ -487,18 +472,43 @@
         <header data-role="header">
             <h1>Edit user</h1>
             <ul>
-                <li><a href="#" data-rel="back">back</a></li>
+                <li><a href="#" data-rel="back" class="back-button"><i class="fa-solid fa-angle-left"></i></a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#user-profile-page">save</a></li>
+                <li><a href="#user-profile-page" class="form-button-small">Save</a></li>
             </ul>
         </header>
         <div data-role="main">
-            form
+            <form id="edit-user-form" class="form" data-ajax="false">
+                <img src="http://via.placeholder.com/100" alt="" >
+                <h6>Username</h6>
+                <input type="text" class="form-input" data-role="none" placeholder="user"> 
+                <h6>Email</h6>
+                <input type="text" class="form-input" data-role="none" placeholder="username@gmail.com"> 
+                <h6>Location</h6>
+                <input type="text" class="form-input" data-role="none" placeholder="San Jose,CA"> 
+
+            </form>
         </div>
         
 
     </section>
 
+    <script type="text/template" id="footer-template">
+        <ul class="nav-icon-set">
+           <li><a href="#explore-page" data-activateone=".nav-icon-set li:nth-child(1)">
+              <span class="nav-icon"><i class="fa-solid fa-compass footer-icon"></i></span>
+              <span class="nav-icon-label">Explore</span>
+           </a></li>
+           <li><a href="#list-page" data-activateone=".nav-icon-set li:nth-child(2)">
+              <span class="nav-icon"><i class="fa-solid fa-list"></i></span>
+              <span class="nav-icon-label">List</span>
+           </a></li>
+           <li><a href="#user-profile-page" data-activateone=".nav-icon-set li:nth-child(3)">
+              <span class="nav-icon"><i class="fa-solid fa-user"></i></span>
+              <span class="nav-icon-label">Profile</span>
+           </a></li>
+        </ul>
+     </script>
 
 </body>
 </html>

@@ -44,7 +44,7 @@ body {
 h1,h2,h3,h4{
     color: var(--title-color);
     font-weight: var(--font-semi-bold);
-    
+    margin: 0;
 }
 
 
@@ -75,9 +75,7 @@ a{
     color: inherit;
 }
 
-label {
 
-}
 
 
 /* Layout Classes */
@@ -117,12 +115,14 @@ label {
     margin-bottom: var(--header-height);
     padding: 1rem;
 }
+
+
 .form-control {
     margin: 1rem 0;
     text-align: center;
 }
 
-.form-input {
+.form-input-signin {
     display: inline-block;
     width: 100%;
     border-width: 0;
@@ -134,12 +134,25 @@ label {
     outline: 0;
 }
 
+.form-input {
+    display: inline-block;
+    width: 100%;
+    border-width: 0;
+    border-bottom: solid 1px var(--text-color-light);
+    font: inherit;
+    padding: .2rem;
+    outline: 0;
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+}
+
 .form-button {
     display: inline-block;
     width: 100%;
     border-width: 0;
     border-radius: 45px;
     background-color: var(--first-color-second);
+    color: var(--text-color);
     font: inherit;
     padding: 0.8rem 1rem;
     margin: 0;
@@ -156,13 +169,20 @@ label {
     border-radius: 45px;
     background-color: var(--first-color-second);
     font: inherit;
-    padding: 0.5rem 1rem;
+    padding: 0 1rem;
     margin: 0;
     outline: 0;
     text-align: center;
     text-decoration: none;
-    font-size: .8rem;
+    
+    display: inline-block;
+    height: 2.2rem;
+    line-height: 2.2rem;
 }
+
+input[type="text"]::placeholder {
+    top: 0px;
+  }
 
 .hotdog {
     background-color: white;
@@ -241,6 +261,7 @@ label {
     line-height: 2rem;
     padding: 0 1em;
     align-items: center;
+    justify-content: space-between;
  }
  .modal-body {
     background-color: var(--light-color);
@@ -333,19 +354,20 @@ label {
 }
 
 .ui-header {
-    line-height: 66px;
-    height: 66px;
+    flex: none;
+    height: 6rem;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
     border-radius: 0px 0px 10px 10px;
     border-width: 0;
     background-color: #fff;
+    line-height: 6rem;
     
 }
 
 
 .ui-footer {
     
-    height: 66px;
+    height: 4rem;
     border-width: 0;
     background-color: #fff;
     box-shadow: 0 0 5px rgba(0,0,0,0.15);
@@ -371,7 +393,7 @@ label {
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 1rem;
 }
 
 .ui-footer li {
@@ -379,11 +401,7 @@ label {
     text-align: center;
 }
 
-.ui-header li,
-.ui-footer li {
-    display: block;
-    padding: 0 1rem;
-}
+
 
 
 
@@ -405,9 +423,7 @@ label {
     padding: 0;
 }
 
-.page-name { 
-    font-size: .85rem;
-}
+
 
 .ui-footer .active {
     color: var(--first-color);
@@ -464,9 +480,6 @@ label {
 }
 
 
-
-
-
 .form-control-signin {
     margin: 2rem 0;
     text-align: center;
@@ -506,13 +519,28 @@ label {
     color: var(--body-color);
 }
 
-#onboarding-paage i,
-#signin-page i,
-#signup-page i {
-    padding-left: 10px;
-}
 
 
+/*  footer nav  */
+
+.nav-icon-set li.active>a {
+    color: var(--first-color);
+ }
+ .nav-icon {
+     line-height: 2rem;
+     display: block;
+ }
+ .nav-icon i {
+     vertical-align: middle;
+     width: 1.5em;
+     font-size: 1.25rem;
+ }
+
+ .nav-icon-label {
+     line-height: 1rem;
+     display: block;
+     font-size: 0.8em;
+ }
 
 /* explore page */
 
@@ -530,7 +558,7 @@ label {
     outline: 0;
     text-align: center;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     display: inline-block;
     width: 2em;
     height: 2em;
@@ -558,13 +586,20 @@ label {
     
 }
 
-
-#explore-page header {
-    height: ;
+.back-button {
+    font-size: 1.25rem;
 }
 
-#explore-page header h1 {
-    font-size: var(--h3-font-size);
+.animal-title {
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+
+
+#explore-page header h3,h4{
+    line-height: 1.5rem;
     margin: 0;
 }
 
@@ -618,10 +653,39 @@ label {
     padding: 1rem;
 }
 
-.main-content a{
-    margin: 0;
+
+/* user profile */
+
+.user-profile {
+    margin: 0 auto;
 }
 
-.main-content {
-    padding: 1rem;
+.user-profile img,
+#edit-user-form img{
+    margin: auto;
+  display: block;
+  padding: 1rem;
+  width: 40%;
+  border-radius: 2rem;
+}
+
+.user-profile-info {
+    margin: 0 auto;
+    padding: 1rem 0;
+    border-bottom: solid 1px var(--text-color-light);
+}
+
+.info-icon {
+    font-size: 1.3rem;
+    color: var(--text-color-light);
+    height: 2rem;
+    line-height: 2rem;
+    margin: 0 2rem;
+    text-align: center;
+}
+
+.info-text p{
+    height: 2rem;
+    line-height: 2rem;
+    margin: 1rem 0;
 }
