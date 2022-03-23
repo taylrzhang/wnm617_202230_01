@@ -66,6 +66,36 @@
         </div>
     </section>
 
+    <section data-role="page" id="signup-page">
+        <div data-role="main" class="display-flex flex-column">
+            
+            
+            <form id="signin-form" class="form" data-ajax="false">
+                <h1>Welcome</h1>
+                <div class="form-control-signin">
+                    <!-- <label for="signin-username" class="form-label">Username</label> -->
+                    <input type="text" id="signin-username" data-role="none" class="form-input-signin" placeholder="Username">
+                </div>
+                <div class="form-control-signin">
+                    <!-- <label for="signin-password" class="form-label">Password</label> -->
+                    <input type="password" id="signin-password" data-role="none" class="form-input-signin" placeholder="Password">
+                   
+                </div>
+        
+                
+                <div class="form-control-signin">
+                    <button type="submit" class="form-button" data-role="none" >Sign in <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+                <div class="signup-link">
+                    <p>Already have an account? 
+                    <a href="#signin-page" class="signup-a">Sign in</a>
+                    </p>
+                </div>
+             </form>
+
+        </div>
+    </section>
+
     <section data-role="page" id="explore-page">
         <header data-role="header" class="animal-title display-flex">
             
@@ -93,7 +123,7 @@
             <div class="modal-back transparent passthrough" data-deactivate="#map-drawer"></div>
             <div class="modal-drawer bottom">
                 <div class="modal-head display-flex">
-                    <div class="flex-none"><h1 class="modal-name">animal title</h1>
+                    <div class="flex-none"><h1 class="modal-name">Groundhog</h1>
                     <h4>Aug 19,2021</h4></div>
                     
                     <div class="flex-none close-button"  data-deactivate="#map-drawer"><i class="fa-solid fa-xmark"></i></div>
@@ -109,10 +139,9 @@
                     </div>
                     
                         <div class="modal-container">
-                            <h6>Type</h6>
-                            <p>Groundhog</p>
-                            <h6>Species</h6>
-                            <p>Marmot</p>
+                            <h6>Classification</h6>
+                            <p>Mammals</p>
+                            
                             <h6>Description</h6>
                             <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
                         </div>
@@ -152,8 +181,8 @@
                            <div class="animal-list-img"><img src="http://via.placeholder.com/100" alt=""></div>
                            <div class="animal-list-body">
                                <div class="animal-list-name">Animal 1</div>
-                               <div class="animal-list-type">Type</div>
-                               <div class="animal-list-species">Species</div>
+                               <div class="animal-list-type">Classification</div>
+                               
                            </div>
                         </a>
                     </li>
@@ -162,8 +191,7 @@
                             <div class="animal-list-img"><img src="http://via.placeholder.com/100" alt=""></div>
                             <div class="animal-list-body">
                                 <div class="animal-list-name">Animal 2</div>
-                                <div class="animal-list-type">Type</div>
-                                <div class="animal-list-species">Species</div>
+                                <div class="animal-list-type">Classification</div>
                             </div>
                          </a>
                      </li>
@@ -172,8 +200,7 @@
                             <div class="animal-list-img"><img src="http://via.placeholder.com/100" alt=""></div>
                             <div class="animal-list-body">
                                 <div class="animal-list-name">Animal 3</div>
-                                <div class="animal-list-type">Type</div>
-                                <div class="animal-list-species">Species</div>
+                                <div class="animal-list-type">Classification</div>
                             </div>
                          </a>
                      </li>
@@ -182,8 +209,7 @@
                             <div class="animal-list-img"><img src="http://via.placeholder.com/100" alt=""></div>
                             <div class="animal-list-body">
                                 <div class="animal-list-name">Animal 4</div>
-                                <div class="animal-list-type">Type</div>
-                                <div class="animal-list-species">Species</div>
+                                <div class="animal-list-type">Classification</div>
                             </div>
                          </a>
                      </li>
@@ -192,8 +218,7 @@
                             <div class="animal-list-img"><img src="http://via.placeholder.com/100" alt=""></div>
                             <div class="animal-list-body">
                                 <div class="animal-list-name">Animal 5</div>
-                                <div class="animal-list-type">Type</div>
-                                <div class="animal-list-species">Species</div>
+                                <div class="animal-list-type">Classification</div>
                             </div>
                          </a>
                      </li>
@@ -202,8 +227,7 @@
                             <div class="animal-list-img"><img src="http://via.placeholder.com/100" alt=""></div>
                             <div class="animal-list-body">
                                 <div class="animal-list-name">Animal 6</div>
-                                <div class="animal-list-type">Type</div>
-                                <div class="animal-list-species">Species</div>
+                                <div class="animal-list-type">Classification</div>
                             </div>
                          </a>
                      </li>
@@ -212,8 +236,7 @@
                             <div class="animal-list-img"><img src="http://via.placeholder.com/100" alt=""></div>
                             <div class="animal-list-body">
                                 <div class="animal-list-name">Animal 7</div>
-                                <div class="animal-list-type">Type</div>
-                                <div class="animal-list-species">Species</div>
+                                <div class="animal-list-type">Classification</div>
                             </div>
                          </a>
                      </li>
@@ -243,7 +266,7 @@
             
             <div class="modal-drawer-fixed bottom">
                 <div class="modal-head display-flex">
-                    <div class="flex-none"><h1 class="modal-name">animal title</h1>
+                    <div class="flex-none"><h1 class="modal-name">Groundhog</h1>
                     <h4>Aug 19,2021</h4></div>
                     <div class="flex-stretch"></div>
                     <div class="flex-none close-button" ><a href="#" data-rel="back"><i class="fa-solid fa-xmark"></i></a></div>
@@ -260,10 +283,9 @@
                     </div>
                     
                         <div class="modal-container">
-                            <h6>Type</h6>
-                            <p>Groundhog</p>
-                            <h6>Species</h6>
-                            <p>Marmot</p>
+                            
+                            <h6>Classification</h6>
+                            <p>Mammals</p>
                             <h6>Description</h6>
                             <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
                         </div>
@@ -306,12 +328,12 @@
                         </div>
                     </div>
                     <div class="modal-body overscroll">
-                        <div class="display-flex">
+                        
                             <div class="search flex-stretch">
                                 <form class="hotdog">
                                     <input type="search" data-role="none" placeholder="Search"></form>
                             </div>
-                        </div>
+                        
                         <div class="display-flex flex-align-center">
                             <div class="flex-none"><h3>Saved ></h3></div>
                             <div class="flex-stretch"></div>
@@ -322,31 +344,31 @@
                                 <li>
                                     <a href="#add-animal-description-page" >
                                         <img src="http://via.placeholder.com/40" alt="">
-                                        <p>animal 0</p>
+                                        <p>animal 1</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#add-animal-description-page" >
                                         <img src="http://via.placeholder.com/40" alt="">
-                                        <p>animal 0</p>
+                                        <p>animal 2</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#add-animal-description-page" >
                                         <img src="http://via.placeholder.com/40" alt="">
-                                        <p>animal 0</p>
+                                        <p>animal 3</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#add-animal-description-page" >
                                         <img src="http://via.placeholder.com/40" alt="">
-                                        <p>animal 0</p>
+                                        <p>animal 4</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#add-animal-description-page" >
                                         <img src="http://via.placeholder.com/40" alt="">
-                                        <p>animal 0</p>
+                                        <p>animal 5</p>
                                     </a>
                                 </li>
                             </ul>
@@ -365,7 +387,7 @@
     <section data-role="page" id="add-animal-description-page">
         
         <header data-role="header">
-            <h1>Animal Title</h1>
+            
             <ul>
                 <li><a href="#" data-rel="back" class="back-button"><i class="fa-solid fa-angle-left"></i></a></li>
                 <li class="flex-stretch"></li>
@@ -376,18 +398,20 @@
         <div data-role="main" >
            
                     
-                    <form id="add-animal-form" class="form" data-ajax="false">
+                    <form id="add-animal-form" class="add-animal-form" data-ajax="false">
                         
-                            <img src="http://via.placeholder.com/50" alt="">
-                    <img src="http://via.placeholder.com/50" alt="">
-                
-                        <h6>Type</h6>
-                            <input type="text" class="form-input" data-role="none" placeholder="type">
+                            <div class="add-animal-img">
+                                <img src="http://via.placeholder.com/60" alt="">
+                                <img src="http://via.placeholder.com/60" alt="">
+                            </div>
+                        <h6>Name</h6>
+                        <input type="text" class="form-input" data-role="none" placeholder="What did you see?">
+                        <h6>Classification</h6>
+                            <input type="text" class="form-input" data-role="none" placeholder="Classification">
                                 
                             </input>
                        
-                        <h6>Species</h6>
-                        <input type="text" class="form-input" data-role="none" placeholder="Speices">
+                        
                         <h6>Description</h6>
                         <input type="text" class="form-input" data-role="none" placeholder="Description">
                         

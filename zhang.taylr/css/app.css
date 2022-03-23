@@ -116,6 +116,10 @@ a{
     padding: 1rem;
 }
 
+.add-animal-form {
+    margin: 0 auto;
+    padding: 1rem;
+}
 
 .form-control {
     margin: 1rem 0;
@@ -180,9 +184,7 @@ a{
     line-height: 2.2rem;
 }
 
-input[type="text"]::placeholder {
-    top: 0px;
-  }
+
 
 .hotdog {
     background-color: white;
@@ -266,7 +268,7 @@ input[type="text"]::placeholder {
  .modal-body {
     background-color: var(--light-color);
     flex: 1 1 100%;
-    padding: 1em;
+    padding: 0 1em;
  }
  
  .modal-drawer {
@@ -319,7 +321,7 @@ input[type="text"]::placeholder {
      width: 156px;
      height: 156px;
      border-radius: 5px;
-     margin: 0 4px;
+     margin: 1rem 4px;
  }
 
  .modal-container {
@@ -356,22 +358,22 @@ input[type="text"]::placeholder {
 .ui-header {
     flex: none;
     height: 6rem;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    border-bottom: solid 1px var(--text-color-light);
     border-radius: 0px 0px 10px 10px;
     border-width: 0;
     background-color: #fff;
     line-height: 6rem;
-    
+    position: relative;
 }
 
 
 .ui-footer {
     
-    height: 4rem;
+    height: 5rem;
     border-width: 0;
     background-color: #fff;
     box-shadow: 0 0 5px rgba(0,0,0,0.15);
-
+    border-radius: 1rem;
     position: relative;
     overflow: hidden;
 }
@@ -393,6 +395,12 @@ input[type="text"]::placeholder {
     display: flex;
     list-style: none;
     margin: 0;
+    padding: 0;
+}
+
+
+.ui-header li {
+    display: block;
     padding: 0 1rem;
 }
 
@@ -405,25 +413,13 @@ input[type="text"]::placeholder {
 
 
 
-.ui-footer li a .icon {
-    padding-top: 6px;
-    text-align: center;
-    display: block;
-    margin-bottom: -5px;
-}
+
 
 .ui-footer li a  {
     color: var(--text-color-light);
     margin: 5px 0;
     
 }
-
-.ui-footer li a i {
-    margin: 0 auto;
-    padding: 0;
-}
-
-
 
 .ui-footer .active {
     color: var(--first-color);
@@ -491,7 +487,8 @@ input[type="text"]::placeholder {
     color: var(--first-color-second);
 }
 
-#signin-page {
+#signin-page,
+#signup-page {
     background-color: var(--first-color);
 }
 
@@ -541,6 +538,15 @@ input[type="text"]::placeholder {
      display: block;
      font-size: 0.8em;
  }
+
+
+
+
+
+
+
+
+
 
 /* explore page */
 
@@ -638,19 +644,15 @@ input[type="text"]::placeholder {
     font-weight: 600;
  }
 
-/* animal profile pages */
-
-.animal-profile-title {
-    margin: 0;
-    padding: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
+.animal-list-type {
+    color: var(--text-color-light);
 }
 
-.animal-profile-content {
-    padding: 1rem;
+
+/* animal profile pages */
+
+.add-animal-img {
+    margin: 1rem 0;
 }
 
 
@@ -672,7 +674,7 @@ input[type="text"]::placeholder {
 .user-profile-info {
     margin: 0 auto;
     padding: 1rem 0;
-    border-bottom: solid 1px var(--text-color-light);
+    
 }
 
 .info-icon {
