@@ -10,11 +10,28 @@ const checkLoginForm = () => {
        console.log('success');
        sessionStorage.userId = 3;
        $("#signin-form")[0].reset();
-    } else {
+    } 
+    else if(user === 'user' && pass !== 'pass'){
        // not logged in
-       console.log('failure');
+       console.log('failure Incorrect password');
        sessionStorage.removeItem('userId');
-    }
+       document.getElementById('output').innerHTML ="Sorry, password is incorrect! Please enter again.";
+       document.getElementById('output').style.background ="#fff";
+    } 
+    else if(user !== 'user' && pass === 'pass'){
+      // not logged in
+      console.log('failure Incorrect username');
+      sessionStorage.removeItem('userId');
+      document.getElementById('output').innerHTML ="Sorry, username is incorrect! Please enter again.";
+      document.getElementById('output').style.background ="#fff";
+   }  
+   else if(user !== 'user' && pass !== 'pass'){
+      // not logged in
+      console.log('failure Incorrect username');
+      sessionStorage.removeItem('userId');
+      document.getElementById('output').innerHTML ="Sorry, username and password are incorrect! Please enter again.";
+      document.getElementById('output').style.background ="#fff";
+   } 
  
     checkUserId();
  }

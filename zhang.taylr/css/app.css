@@ -212,6 +212,16 @@ a{
      padding: 1rem;
  }
 
+ .reminder {
+     color: var(--accent-color);
+     padding: 2rem;
+     margin: 1rem;
+     border-radius: 1rem;
+     font-weight: 500;
+ }
+
+
+ 
 /* Modals */
 
 .modal {
@@ -327,7 +337,7 @@ a{
  }
 
  .modal-container {
-     padding: 1em;
+     padding: 1rem;
      background-color: var(--body-color);
      border-radius: 6px;
  }
@@ -336,7 +346,10 @@ a{
     font-size: var(--h1-font-size);
     margin: 0;
     padding-top: 1rem;
+}
 
+.modal-container p {
+    margin-bottom: 1rem;
 }
 /* page layout */
 
@@ -444,9 +457,11 @@ a{
 }
 
 .ui-mobile .form-label {
-   font-size: 0.8em;
-   color: var(--text-color-light);
-   margin: 0.5rem 0;
+   
+   font-size: .8rem;
+    font-weight: 400;
+    color: var(--text-color-light);
+    margin: 0;
 }
 
 
@@ -526,6 +541,7 @@ a{
     text-align: center;
     font-size: 16px;
     color: var(--body-color);
+    margin: 1rem 0;
 }
 
 
@@ -706,7 +722,17 @@ a{
 
 .add-animal-img {
     margin: 1rem 0;
+    font-size: 1.25rem;
+    color: var(--text-color-light);
+    border: solid 2px var(--text-color-light);
+    border-radius: 1rem;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    text-align: center;
 }
+
+
 
 .viewed-time {
     color: var(--text-color-light);
@@ -739,6 +765,15 @@ a{
     
 }
 
+/* edit animal page */
+
+.edit-img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 5px;
+    margin: 1rem 4px;
+}
+}
 
 
 /* user profile */

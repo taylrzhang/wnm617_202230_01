@@ -38,6 +38,8 @@
 
     <section data-role="page" id="signin-page">
         <div data-role="main" class="display-flex flex-column">
+
+            <div id="output" class="reminder"></div>
             <div class="flex-stretch"></div>
             
             <form id="signin-form" class="form" data-ajax="false">
@@ -45,13 +47,15 @@
                 <div class="form-control-signin">
                     <!-- <label for="signin-username" class="form-label">Username</label> -->
                     <input type="text" id="signin-username" data-role="none" class="form-input-signin" placeholder="Username">
+                    
                 </div>
                 <div class="form-control-signin">
                     <!-- <label for="signin-password" class="form-label">Password</label> -->
                     <input type="password" id="signin-password" data-role="none" class="form-input-signin" placeholder="Password">
-                   
+                    
                 </div>
-        
+                
+
                 
                 <div class="form-control-signin">
                     <button type="submit" class="form-button" data-role="none" >Sign in <i class="fa-solid fa-arrow-right"></i></button>
@@ -61,7 +65,7 @@
                     <a href="#signup-page" class="signup-a">Create one</a>
                     </p>
                 </div>
-             </form>
+            </form>
 
         </div>
     </section>
@@ -143,11 +147,10 @@
                     </div>
                     
                         <div class="modal-container">
-                            <h6>Type</h6>
-                            <p>Marmot</p>
-                            
-                            <h6>Description</h6>
-                            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                <h6>Type</h6>
+                                <p>Marmot</p>
+                                <h6>Description</h6>
+                                <p>Groundhogs hibernate from late fall for roughly three months, then wake up when it's still quite cold. Those impressive tunneling skills make for great burrows, but they can also mean big headaches.</p>
                         </div>
                     
                 </div>
@@ -298,11 +301,10 @@
                     </div>
                     
                         <div class="modal-container">
-                            
-                            <h6>Type</h6>
-                            <p>Marmot</p>
-                            <h6>Description</h6>
-                            <p>Groundhogs hibernate from late fall for roughly three months, then wake up when it's still quite cold. Those impressive tunneling skills make for great burrows, but they can also mean big headaches.</p>
+                                <h6>Type</h6>
+                                <p>Marmot</p>
+                                <h6>Description</h6>
+                                <p>Groundhogs hibernate from late fall for roughly three months, then wake up when it's still quite cold. Those impressive tunneling skills make for great burrows, but they can also mean big headaches.</p>
                         </div>
                     
                 </div>
@@ -361,31 +363,31 @@
                         <div class="animal-profile-list">
                             <ul>
                                 <li>
-                                    <a href="#add-animal-description-page" >
+                                    <a href="#animal-edit-page" >
                                         <img src="http://via.placeholder.com/40" alt="">
                                         <p>animal 1</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#add-animal-description-page" >
+                                    <a href="#animal-edit-page" >
                                         <img src="http://via.placeholder.com/40" alt="">
                                         <p>animal 2</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#add-animal-description-page" >
+                                    <a href="#animal-edit-page" >
                                         <img src="http://via.placeholder.com/40" alt="">
                                         <p>animal 3</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#add-animal-description-page" >
+                                    <a href="#animal-edit-page" >
                                         <img src="http://via.placeholder.com/40" alt="">
                                         <p>animal 4</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#add-animal-description-page" >
+                                    <a href="#animal-edit-page" >
                                         <img src="http://via.placeholder.com/40" alt="">
                                         <p>animal 5</p>
                                     </a>
@@ -407,7 +409,7 @@
     <section data-role="page" id="add-animal-description-page">
         
         <header data-role="header">
-            
+            <h1>Add Animal</h1>
             <ul>
                 <li><a href="#" data-rel="back" class="back-button"><i class="fa-solid fa-angle-left"></i></a></li>
                 <li class="flex-stretch"></li>
@@ -421,26 +423,59 @@
                     <form id="add-animal-form" class="edit-form" data-ajax="false">
                         
                             <div class="add-animal-img">
-                                <img src="http://via.placeholder.com/60" alt="">
-                                <img src="http://via.placeholder.com/60" alt="">
+                                <i class="fa-solid fa-plus"></i>
                             </div>
-                        <h6>Name</h6>
+                        <label for="add-animal-name" class="form-label">Name</label>
                         <input type="text" class="form-input" data-role="none" placeholder="What did you see?">
-                        <h6>Type</h6>
-                            <input type="text" class="form-input" data-role="none" placeholder="Type">
+                        <label for="add-animal-type" class="form-label">Type</label>
+                            <input type="text" class="form-input" data-role="none" placeholder="Add the animal type">
                                 
                             </input>
                        
+                            <label for="add-animal-description" class="form-label">Description</label>
                         
-                        <h6>Description</h6>
-                        <input type="text" class="form-input" data-role="none" placeholder="Description">
+                        <input type="text" class="form-input" data-role="none" placeholder="Add the animal description">
                         
                         
                     </form>
-                    
-                   
+              
 
-            
+            </div>
+        
+    
+    </section>
+
+    <section data-role="page" id="animal-edit-page">
+        
+        <header data-role="header">
+            <h1>Edit Animal</h1>
+            <ul>
+                <li><a href="#" data-rel="back" class="back-button"><i class="fa-solid fa-angle-left"></i></a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#explore-page" class="form-button-small">Save</a></li>
+            </ul>
+        </header>
+
+        <div data-role="main" >
+           
+                    
+                    <form id="add-animal-form" class="edit-form" data-ajax="false">
+                        
+                        <div class="display-flex">
+                            <div class="flex-column"><img class="edit-img" src="img/marmot1.jpg" alt=""></div>
+                            <div class="flex-column"><img  class="edit-img"src="img/marmot2.jpg" alt=""></div>
+                        </div>
+                        <label for="edit-animal-name" class="form-label">Name</label>
+                        <input type="text" class="form-input" data-role="none" placeholder="Groundhog">
+                        <label for="edit-animal-type" class="form-label">Type</label>
+                        <input type="text" class="form-input" data-role="none" placeholder="Marmot">
+                       
+                        <label for="edit-animal-description" class="form-label">Description</label>
+                        <textarea id="edit-animal-description" class="form-input" data-role="none" placeholder="Add the animal description">Groundhogs hibernate from late fall for roughly three months, then wake up when it's still quite cold. Those impressive tunneling skills make for great burrows, but they can also mean big headaches.</textarea>
+                        
+                        
+                    </form>
+              
 
             </div>
         
@@ -557,11 +592,11 @@
                     </div>
                 </div>
                 
-                <h6>Username</h6>
+                <label for="edit-username" class="form-label">Username</label>
                 <input type="text" class="form-input" data-role="none" placeholder="user"> 
-                <h6>Email</h6>
+                <label for="edit-email" class="form-label">Email</label>
                 <input type="text" class="form-input" data-role="none" placeholder="username@gmail.com"> 
-                <h6>Location</h6>
+                <label for="edit-location" class="form-label">Location</label>
                 <input type="text" class="form-input" data-role="none" placeholder="San Jose,CA"> 
 
             </form>
