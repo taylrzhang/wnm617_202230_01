@@ -1,6 +1,6 @@
-const ExplorePage = async() => {
-}
+const ExplorePage = async() => { 
 
+}
 
 
 const ListPage = async() => {
@@ -38,7 +38,7 @@ const UserProfilePage = async() => {
        params:[sessionStorage.animalId]
     })
     let [animal] = animals;
-    $(".modal-img").css({"background-image":`url(${animal.img})`})
+    // $(".modal-img").css({"background-image":`url(${animal.img})`})
     $(".modal-name").html(animal.name)
     $(".modal-container").html(makeAnimalProfileDescription(animal));
  

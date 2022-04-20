@@ -60,6 +60,8 @@ function makeStatement($data) {
       case "locations_all":
          return makeQuery($c, "SELECT * FROM `track_locations`", $p);
 
+
+
       case "user_by_id":
          //return makeQuery($c, "SELECT * FROM `track_users` WHERE `id` = ?", $p);
          return makeQuery($c, "SELECT `id`,`name`,`email`,`img`,`username` FROM `track_users` WHERE `id` = ?", $p);
@@ -68,10 +70,12 @@ function makeStatement($data) {
       case "location_by_id":
          return makeQuery($c, "SELECT * FROM `track_locations` WHERE `id` = ?", $p);
 
+         
       case "animals_by_user_id":
          return makeQuery($c, "SELECT * FROM `track_animals` WHERE `user_id` = ?", $p);
       case "locations_by_animal_id":
          return makeQuery($c, "SELECT * FROM `track_locations` WHERE `animal_id` = ?", $p);
+
 
 
 

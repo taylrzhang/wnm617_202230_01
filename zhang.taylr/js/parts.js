@@ -1,6 +1,8 @@
+
+
 const makeAnimalList = templater(o=>`
 <li class="animal-list-item">
-   <a href="#animal-profile-page" data-id="${o.id}">
+   <a href="#animal-profile-page" class="js-animal-jump" data-id="${o.id}">
       <div class="animal-list-img"><img src="${o.img}" alt=""></div>
       <div class="animal-list-body">
          <div class="animal-list-name">${o.name}</div>
@@ -10,6 +12,7 @@ const makeAnimalList = templater(o=>`
 </li>
 
 `);
+
 
 const makeUserProfilePage = o => `
 
@@ -39,7 +42,6 @@ const makeUserProfilePage = o => `
 
 
 const makeAnimalProfileDescription = o => `
-
 
     <h6>Type</h6>
     <p>${o.type}</p>

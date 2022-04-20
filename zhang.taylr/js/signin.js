@@ -1,40 +1,30 @@
 
-const checkLoginForm = () => {
-    let user = $("#signin-username").val();
-    let pass = $("#signin-password").val();
- 
-    console.log(user,pass)
- 
-    if (user === 'user' && pass === 'pass') {
-       // logged in
-       console.log('success');
-       sessionStorage.userId = 3;
-       $("#signin-form")[0].reset();
-    } 
-    else if(user === 'user' && pass !== 'pass'){
-       // not logged in
-       console.log('failure Incorrect password');
-       sessionStorage.removeItem('userId');
-       document.getElementById('output').innerHTML ="Sorry, password is incorrect! Please enter again.";
-       document.getElementById('output').style.background ="#fff";
-    } 
-    else if(user !== 'user' && pass === 'pass'){
+const checkLoginForm = async() => {
+   let user = $("#signin-username").val();
+   let pass = $("#signin-password").val();
+
+   console.log(user,pass)
+
+   let founduser = await query({
+      type:'check_signin',
+      params: [user,pass]
+   })
+
+   if (founduser.result.length > 0) {
+      // logged in
+      console.log('success');
+      sessionStorage.userId = founduser.result[0].id;
+      $("#signin-form")[0].reset();
+   } else {
       // not logged in
-      console.log('failure Incorrect username');
-      sessionStorage.removeItem('userId');
-      document.getElementById('output').innerHTML ="Sorry, username is incorrect! Please enter again.";
-      document.getElementById('output').style.background ="#fff";
-   }  
-   else if(user !== 'user' && pass !== 'pass'){
-      // not logged in
-      console.log('failure Incorrect username');
+      console.log('failure');
       sessionStorage.removeItem('userId');
       document.getElementById('output').innerHTML ="Sorry, username and password are incorrect! Please enter again.";
       document.getElementById('output').style.background ="#fff";
-   } 
- 
-    checkUserId();
- }
+   }
+
+   checkUserId();
+}
  
  const checkUserId = () => {
     let p = ["#signin-page","#signup-page",""];
