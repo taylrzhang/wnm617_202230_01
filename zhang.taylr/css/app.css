@@ -649,7 +649,9 @@ a{
     margin: 0;
 }
 
-
+.map {
+    height: 100%;
+}
 .map-img {
     height: 86px;
 }

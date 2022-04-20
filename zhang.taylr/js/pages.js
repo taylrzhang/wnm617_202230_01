@@ -1,9 +1,26 @@
+
+
 const ExplorePage = async() => { 
+    
+
+
     let {result} = await query({
         type:'explore_animal_locations',
         params:[sessionStorage.userId]
      });
      console.log(result);
+
+     
+     let valid_animals = result.reduce((r,o)=>{
+        o.icon = o.img;
+        if(o.lat && o.lng) r.push(o);
+        return r;
+     },[]);
+  
+     let map_el = await makeMap("#explore-page .map");
+     makeMarkers(map_el,valid_animals)
+
+
 }
 
 
@@ -51,4 +68,7 @@ const UserProfilePage = async() => {
        params:[sessionStorage.animalId]
     })
     console.log(locations)
+
+    let map_el = await makeMap("#animal-profile-page .map");
+   makeMarkers(map_el,locations)
  }
