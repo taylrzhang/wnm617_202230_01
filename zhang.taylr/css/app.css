@@ -329,7 +329,8 @@ a{
     transform: translate(0);
  }
 
- .modal-img {
+ 
+ .modal-img>img {
      width: 156px;
      height: 156px;
      border-radius: 5px;
@@ -650,7 +651,7 @@ a{
 
 
 .map-img {
-    height: 70px;
+    height: 86px;
 }
 .map-img img{
     position: relative;

@@ -1,5 +1,9 @@
 const ExplorePage = async() => { 
-
+    let {result} = await query({
+        type:'explore_animal_locations',
+        params:[sessionStorage.userId]
+     });
+     console.log(result);
 }
 
 
@@ -38,7 +42,7 @@ const UserProfilePage = async() => {
        params:[sessionStorage.animalId]
     })
     let [animal] = animals;
-    // $(".modal-img").css({"background-image":`url(${animal.img})`})
+    $(".modal-img").html(makeAnimalProfileImage(animal))
     $(".modal-name").html(animal.name)
     $(".modal-container").html(makeAnimalProfileDescription(animal));
  

@@ -49,3 +49,8 @@ const makeAnimalProfileDescription = o => `
     <p>${o.description}</p>
 
 `;
+
+const makeAnimalProfileImage = o => `
+    <img src="${o.img}" alt="">
+
+`;
