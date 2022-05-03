@@ -55,7 +55,7 @@
       
       description: '{{lorem(3,"sentences")}}',
       
-      img: 'https://via.placeholder.com/400/',
+      photo: 'https://via.placeholder.com/400/',
       icon: 'https://via.placeholder.com/400/?text=ICON',
       date_create: '{{date(new Date(2022, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
     }

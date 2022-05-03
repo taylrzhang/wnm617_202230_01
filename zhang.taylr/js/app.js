@@ -14,7 +14,10 @@ $(() => {
          case "explore-page": ExplorePage(); break;
          case "list-page": ListPage(); break;
          case "user-profile-page": UserProfilePage(); break;
+         case "user-edit-page": UserEditPage(); break;
          case "animal-profile-page": AnimalProfilePage(); break;
+         case "animal-edit-page": AnimalEditPage(); break;
+         case "add-animal-description-page": AnimalAddPage(); break;
       }
    })
 
@@ -26,7 +29,20 @@ $(() => {
        checkLoginForm();
     })
  
- 
+    
+    // FORM SUBMISSION CLICKS
+   .on("click", ".js-submit-animal-add", function() {
+      submitAnimalAdd();
+     
+   })
+
+   .on("click", ".js-submit-user-edit", function() {
+      submitUserEdit();
+     
+   })
+
+
+
     // CLICKS
     .on("click", ".js-logout", function() {
        sessionStorage.removeItem("userId");

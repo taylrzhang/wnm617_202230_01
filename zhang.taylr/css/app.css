@@ -140,7 +140,7 @@ a{
     outline: 0;
 }
 
-.form-input {
+.form-input {                                                                      
     display: inline-block;
     width: 100%;
     border-width: 0;
