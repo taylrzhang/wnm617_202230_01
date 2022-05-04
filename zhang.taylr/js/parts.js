@@ -6,7 +6,7 @@ const makeAnimalList = templater(o=>`
       <div class="animal-list-img"><img src="${o.img}" alt=""></div>
       <div class="animal-list-body">
          <div class="animal-list-name">${o.name}</div>
-         <div class="animal-list-type">Type: ${o.type}</div>
+         <div class="animal-list-type"> ${o.type}</div>
       </div>
    </a>
 </li>
@@ -56,7 +56,36 @@ const makeAnimalProfileImage = o => `
 
 `;
 
+const makeAnimalPopupModal = o => `
 
+<div class="modal-head display-flex">
+    <div class="flex-none">
+        <h1 class="modal-name">${o.name}</h1>
+    </div>
+    
+    <div class="flex-none"><a href="#animal-profile-page" class="form-button-small js-animal-jump" data-id="${o.id}">See all</a></div>
+</div>
+
+<div class="modal-body overscroll">
+    <div class="display-flex">
+        <div class="flex-column "><div class="modal-img"><img src="${o.img}" alt=""></div></div>
+        <div class="flex-column"><div class="modal-img"><img src="${o.img}" alt=""></div></div>
+    </div>
+    <div class="display-flex animal-title">
+        <h3>Details</h3>
+        
+    </div>
+    
+        <div class="modal-container">
+        <h6>Type</h6>
+        <p>${o.type}</p>
+        <h6>Description</h6>
+        <p>${o.description}</p> 
+        </div>
+    
+
+</div>
+`;
 
 
 const FormControlInput = ({namespace,name,displayname,type,placeholder,value=""}) => {

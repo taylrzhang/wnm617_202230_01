@@ -20,6 +20,33 @@ const ExplorePage = async() => {
      let map_el = await makeMap("#explore-page .map");
      makeMarkers(map_el,valid_animals)
 
+     map_el.data("markers").forEach((m,i)=>{
+      console.log(m)
+      m.addListener("click",function(e){
+         let animal = valid_animals[i];
+
+         console.log(animal)
+
+         // Just Navigate
+         // sessionStorage.animalId = animal.animal_id;
+         // $.mobile.navigate("#animal-profile-page");
+
+
+         // Open Google InfoWindow
+         // map_el.data("infoWindow")
+         //    .open(map_el.data("map"),m);
+         // map_el.data("infoWindow")
+         //    .setContent(makeAnimalPopupBody(animal));
+
+
+         $("#map-drawer")
+            .addClass("active")
+            .find(".modal-drawer")
+            .html(makeAnimalPopupModal({...animal, id:animal.animal_id}))
+         
+   
+      })
+   })
 
 }
 

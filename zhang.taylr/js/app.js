@@ -36,10 +36,12 @@ $(() => {
      
    })
 
-   .on("click", ".js-submit-user-edit", function() {
-      submitUserEdit();
+   .on("click", ".js-submit-animal-edit", function() {
+      submitAnimalAdd();
      
    })
+
+   
 
 
 
@@ -58,6 +60,7 @@ $(() => {
          throw("No id detected");
       }
    })
+
 
 
   
@@ -95,3 +98,11 @@ $(() => {
    });
 
  });
+
+  //TOGGLE BUTTON
+  window.onload = function(){ 
+  const toggle = document.getElementById('toggle');
+  toggle.onclick = function(){
+     toggle.classList.toggle('active')
+  }};
+ 

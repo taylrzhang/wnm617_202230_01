@@ -125,43 +125,21 @@
                         <h4>Add an animal to capture what you see.</h4>
                     </div>
                
-                    <div class="display-block"><a href="#add-animal-location-page" class="add-button"><i class="fa-solid fa-square-plus" style="color: #fff;"></i></a></div>
+                    <div class="display-block"><a href="#choose-animal-page" class="add-button"><i class="fa-solid fa-square-plus" style="color: #fff;"></i></a></div>
                 
              
         </header>
         <div data-role="main">
-                <div class="map"></div>   
-                    <div class="map-img"><div class="modal-img"></div></div>
+                <div class="map">  
+                    
                 </div>
             
         </div>
         <footer data-role="footer" data-template="#footer-template"></footer>
 
         <div id="map-drawer" class="modal">
-            <div class="modal-back " data-deactivate="#map-drawer"></div>
-            <div class="modal-drawer bottom">
-                <div class="modal-head display-flex">
-                    <div class="flex-none"><h1 class="modal-name"></h1>
-                    
-                    
-                    <div class="flex-none close-button"  data-deactivate="#map-drawer"><i class="fa-solid fa-xmark"></i></div>
-                </div>
-                <div class="modal-body overscroll">
-                    <div class="display-flex">
-                        <div class="flex-column "><div class="modal-img"></div></div>
-                        <div class="flex-column"><div class="modal-img"></div></div>
-                    </div>
-                    <div class="display-flex animal-title">
-                        <h3>Details</h3>
-                        <a href="#animal-edit-page" class="form-button-small">Edit</a>
-                    </div>
-                    
-                        <div class="modal-container">
-                                
-                        </div>
-                    
-                </div>
-            </div>
+            <div class="modal-back transparent" data-deactivate="#map-drawer"></div>
+            <div class="modal-drawer bottom"></div>
         </div>
 
     </section>
@@ -173,7 +151,7 @@
                 
                 <ul >
                     <li class="flex-stretch"></li>
-                    <li ><a href="#add-animal-location-page" class="add-button"><i class="fa-solid fa-square-plus" style="color: #fff;"></i></a></li>
+                    <li ><a href="#choose-animal-page" class="add-button"><i class="fa-solid fa-square-plus" style="color: #fff;"></i></a></li>
                 </ul >
             
         </header>
@@ -214,17 +192,16 @@
 
         <div data-role="main">
             <div class="map"></div>
+            <a href="#add-animal-location-page" class="floater top right form-button-small">+location</a>   
+                    
+            </div>
             
-             </div>
+        </div>
             
             <div class="modal-drawer-fixed bottom">
                 <div class="modal-head">
                     <div class="text-center"><h1 class="modal-name"></h1>
                     <h4></h4></div>
-                    
-                        <!-- <div class="flex-none viewed-time" ><i class="fa-solid fa-eye"></i>1</div> -->
-                    
-                        
                     
                 </div>
                 <div class="modal-body overscroll">
@@ -251,88 +228,58 @@
     
     </section>
 
+    <section data-role="page" id="choose-animal-page">
+        <header data-role="header">
+           <h1>Choose Animal</h1>
+           <ul>
+              <li><a href="#" data-rel="back">Cancel</a></li>
+              <li class="flex-stretch"></li>
+              <li><a href="#add-animal-location-page">Next</a></li>
+           </ul>
+        </header>
+        <div data-role="main">
+           <!-- <form id="animal-add-form" class="overscroll" data-ajax="false" style="padding:1em"></form> -->
+           <div class="search flex-stretch">
+            <form class="hotdog">
+                <input type="search" data-role="none" placeholder="Search"></form>
+            </div>
+    
+            <div class="display-flex flex-align-center">
+                <div class="flex-none"><h3>Saved ></h3></div>
+                <div class="flex-stretch"></div>
+                <div class="flex-none"><a href="#add-animal-location-page" class="form-button-small">Create</a></div>
+            </div>
+        
+        </div>
+        
+     </section>
+
+
     <section data-role="page" id="add-animal-location-page">
         
             <header data-role="header">
                 <h1>Set Location</h1>
             <ul>
-                <li><a href="#" data-rel="back">Cancel</a></li>
+                <li><a href="#" data-rel="back"><i class="fa-solid fa-angle-left"></i></a></li>
                 <li class="flex-stretch"></li> 
                  
             </ul>
             </header>
 
             <div data-role="main">
-                <div class="map"></div>
+                <div class="map"></div>   
+                    
+        
                 
 
-                <div class=" bottom-button" data-activate="#add-drawer">
-                    <p>Add animal details</p>
-                </div>
+                <a href="#add-animal-description-page">
+                    <div class=" bottom-button">
+                        <p>Add animal details</p>
+                    </div>
+                </a>
             </div>
             
-            <div id="add-drawer" class="modal bottom">
-                <div class="modal-drawer half-bottom">
-                    <div class="modal-head display-flex">
-                        <div class="flex-none "><h1 class="pin-name">Dropped pin</h1>
-                        <h4>37.45976 N, 122.23725 W</h4></div>
-                        <div class="flex-stretch"></div>
-                        <div class="flex-none"  data-deactivate="#add-drawer">
-                            <div class="close-button"><i class="fa-solid fa-xmark"></i></div>
-                        </div>
-                    </div>
-                    <div class="modal-body overscroll">
-                        
-                            <div class="search flex-stretch">
-                                <form class="hotdog">
-                                    <input type="search" data-role="none" placeholder="Search"></form>
-                            </div>
-                        
-                        <div class="display-flex flex-align-center">
-                            <div class="flex-none"><h3>Saved ></h3></div>
-                            <div class="flex-stretch"></div>
-                            <div class="flex-none"><a href="#add-animal-description-page" class="form-button-small">Create</a></div>
-                        </div>
-                        <div class="animal-profile-list">
-                            <ul>
-                                <li>
-                                    <a href="#animal-edit-page" >
-                                        <img src="https://via.placeholder.com/40" alt="">
-                                        <p>animal 1</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#animal-edit-page" >
-                                        <img src="https://via.placeholder.com/40" alt="">
-                                        <p>animal 2</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#animal-edit-page" >
-                                        <img src="https://via.placeholder.com/40" alt="">
-                                        <p>animal 3</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#animal-edit-page" >
-                                        <img src="https://via.placeholder.com/40" alt="">
-                                        <p>animal 4</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#animal-edit-page" >
-                                        <img src="https://via.placeholder.com/40" alt="">
-                                        <p>animal 5</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                         
-                    
-                        
-                    </div>
-                </div>
-            </div>
+            
            
         
         
@@ -377,7 +324,7 @@
             <ul>
                 <li><a href="#" data-rel="back" class="back-button"><i class="fa-solid fa-angle-left"></i></a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#explore-page" class="form-button-small">Save</a></li>
+                <li><a href="#" class="form-button-small js-submit-animal-edit">Save</a></li>
             </ul>
         </header>
 
@@ -422,31 +369,68 @@
         <div data-role="main" class="overscroll">
             
 
-                <div class="setting">
+                <ul class="setting">
 
-                    <div class="display-flex flex-align-center">
-                        <div class="flex-none setting-icon"><i class="fa-solid fa-moon"></i></div>
-                        <div class="flex-none info-text">    
-                        <p>Dark Mode</p>
-                        </div>
-                    </div>
-
-                    <div class="display-flex flex-align-center">
-                        <div class="flex-none setting-icon"><i class="fa-solid fa-circle-info"></i></div>
-                        <div class="flex-none info-text">    
-                        <p>About</p>
-                        </div>
-                    </div>
-
-                    <a href="#onboarding-page">
-                        <div class="display-flex flex-align-center">
-                            <div class="flex-none setting-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></i></div>
-                            <div class="flex-none info-text">
-                            <p>Logout</p>
+                    <li>
+                        <a href="#notifications">
+                            <div class="display-flex flex-align-center">
+                                <div class="flex-none setting-icon">
+                                    <i class="fa-solid fa-bell"></i>
+                                </div>
+                                <div class="flex-none info-text">
+                                    <p>Notifications</p>
+                                    <h6>Receive push notifications via your mobile app.</h6>
+                                </div>
+                                <div class="flex-stretch"></div>
+                                <div id="toggle" class="flex-none">
+                                    <i class="indicator"></i>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </li>
+                    <br>
+                    <li>
+                        <a href="#user-password-page">
+                            <div class="display-flex flex-align-center">
+                                <div class="flex-none setting-icon">
+                                    <i class="fa-solid fa-lock"></i></div>
+                                <div class="flex-none info-text">
+                                <p>Change your Password</p>
+                                </div>
+                                <div class="flex-stretch"></div>
+                                <div class="flex-none expand-icon"> <i class="fa-solid fa-angle-right"></i></div>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#about">
+                            <div class="display-flex flex-align-center">
+                                <div class="flex-none setting-icon">
+                                    <i class="fa-solid fa-circle-info"></i></div>
+                                <div class="flex-none info-text">
+                                <p>About</p>
+                                </div>
+                                <div class="flex-stretch"></div>
+                                <div class="flex-none expand-icon"> <i class="fa-solid fa-angle-right"></i></div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <br>
+                        <li>
+                            <a href="#" class="js-logout">
+                                <div class="display-flex flex-align-center">
+                                    <div class="flex-none setting-icon">
+                                        <i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+                                    <div class="flex-none info-text">
+                                    <p>Logout</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    
+                </ul>
                
             
         </div>
@@ -461,7 +445,7 @@
             <ul>
                 <li><a href="#" data-rel="back" class="back-button"><i class="fa-solid fa-angle-left"></i></a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#" class="js-submit-user-edit">Save</a></li>
+                <li><a href="#" class="js-submit-user-edit form-button-small">Save</a></li>
             </ul>
         </header>
         <div data-role="main">
@@ -470,8 +454,58 @@
 
             </form>
         </div>
-        
+    </section>
 
+    <section data-role="page" id="user-password-page">
+        <header data-role="header">
+            <h1>Update Password</h1>
+            <ul>
+                <li><a href="#" data-rel="back" class="back-button"><i class="fa-solid fa-angle-left"></i></a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#" class="js-submit-user-edit form-button-small">Save</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            <form id="user-password-form" class="edit-form" data-ajax="false">
+                <div class="form-control">
+                    <label for="user-password-new" class="form-label">New Password</label>
+                    <input class="form-input" type="password" id="user-password-new" data-role="none">
+                 </div>
+                 <div class="form-control">
+                    <label for="user-password-repeat" class="form-label">Repeat Password</label>
+                    <input class="form-input" type="password" id="user-password-repeat" data-role="none">
+                 </div>
+
+            </form>
+        </div>
+    </section>
+
+    <section data-role="page" id="about">
+        <header data-role="header">
+            <h1>About</h1>
+         <ul class="display-flex">
+
+             <li><a href="#" data-rel="back" class="back-button"><i class="fa-solid fa-angle-left"></i></a></li>
+             <li class="flex-stretch"></li>
+         </ul>
+     </header>
+     <div data-role="main" class="overscroll">
+         <div class="about-info">
+             <h1>About</h1>
+             <br>
+             <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae blanditiis consequuntur totam corporis quaerat atque architecto fuga impedit tempore, velit exercitationem doloremque? Iure adipisci ullam magni eius! Quo, iure dolorum.</P>
+             <br>
+             <h1>Terms of use</h1>
+             <br>
+             <p>Please note that your use of and access to our services are subject to the following terms. If you do not agree to all of the following, you may not use or access the services in any manner.
+            </p>
+            <br>
+            <h1>Privacy policy</h1>
+            <br>
+            <p>We take the privacy of our users not too seriously.</p>
+            <p>    Our services is not directed to serious users who are at all ages. OKAYBAGEL does not knowingly collect personal data because we don't care that much. Ha. But if you're a concerned user who thinks the privacy policy could be better, feel free to send us an email.</p>
+         </div>
+    </div>  
     </section>
 
     <script type="text/template" id="footer-template">
@@ -489,6 +523,7 @@
               <span class="nav-icon-label">Profile</span>
            </a></li>
         </ul>
+
      </script>
 
 </body>

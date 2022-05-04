@@ -8,7 +8,8 @@ const makeMap = async (target, center={ lat: 37.751917, lng: -122.447489 }) => {
           center,
           zoom: 12,
           disableDefaultUI: true,
-       })
+       }),
+       "infoWindow": new google.maps.InfoWindow({content:''}),
     });
  
     return map_el;
