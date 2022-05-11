@@ -91,7 +91,7 @@
                     <input type="text" id="signup-username" data-role="none" class="form-input-signin" placeholder="Username">
                 </div>
                 <div class="form-control-signin">
-                    <input type="text" id="signup-Email" data-role="none" class="form-input-signin" placeholder="Email">
+                    <input type="email" id="signup-email" data-role="none" class="form-input-signin" placeholder="Email">
                 </div>
                 <div class="form-control-signin">
                     <input type="password" id="signup-password" data-role="none" class="form-input-signin" placeholder="Password">
@@ -192,7 +192,7 @@
 
         <div data-role="main">
             <div class="map"></div>
-            <a href="#add-animal-location-page" class="floater top right form-button-small">+location</a>   
+            <a href="#add-animal-location-page" class="floater top right form-button-small js-location-choose-animal">+location</a>   
                     
             </div>
             
@@ -238,16 +238,22 @@
            </ul>
         </header>
         <div data-role="main">
-           <!-- <form id="animal-add-form" class="overscroll" data-ajax="false" style="padding:1em"></form> -->
-           <div class="search flex-stretch">
+           <!-- <div class="search flex-stretch">
             <form class="hotdog">
-                <input type="search" data-role="none" placeholder="Search"></form>
-            </div>
+                <input type="search" data-role="none" placeholder="Search">
+            </form>
+            </div> -->
     
-            <div class="display-flex flex-align-center">
+            <!-- <div class="display-flex flex-align-center" style="padding: 1rem;">
                 <div class="flex-none"><h3>Saved ></h3></div>
                 <div class="flex-stretch"></div>
-                <div class="flex-none"><a href="#add-animal-location-page" class="form-button-small">Create</a></div>
+                <div class="flex-none"><a href="#animal-add-page" class="form-button-small">Create</a></div>
+            </div> -->
+
+            <div class="choose-animal">
+                <h3>Saved ></h3>
+                <input type="hidden" id="location-animal">
+                <a href="#animal-add-page" class="bottom-button">Create a new animal</a>
             </div>
         
         </div>
@@ -262,34 +268,42 @@
             <ul>
                 <li><a href="#" data-rel="back"><i class="fa-solid fa-angle-left"></i></a></li>
                 <li class="flex-stretch"></li> 
-                 
+                <li><a href="#add-animal-description-page">Next</a></li>
             </ul>
             </header>
 
             <div data-role="main">
-                <div class="map"></div>   
-                    
-        
-                
+                <input type="hidden" id="location-lat">
+                <input type="hidden" id="location-lng">
+                <div class="map fill-parent"></div> 
 
-                <a href="#add-animal-description-page">
-                    <div class=" bottom-button">
-                        <p>Add animal details</p>
-                    </div>
-                </a>
-            </div>
-            
-            
-           
-        
-        
-        
+                
+            </div>   
     </section>
 
     <section data-role="page" id="add-animal-description-page">
         
         <header data-role="header">
-            <h1>Add Animal</h1>
+            <h1>Describe The Animal</h1>
+            <ul>
+                <li><a href="#" data-rel="back" class="back-button"><i class="fa-solid fa-angle-left"></i></a></li>
+                <li class="flex-stretch"></li>
+                <li> <a href="#" class="js-submit-location-add form-button-small">Save</a></li>
+            </ul>
+        </header>
+
+        <div data-role="main" style="padding: 0 1rem;">
+            <div class="form-control">
+                <label for="#location-description" class="form-label">Description</label>
+                <textarea id="location-description" class="form-input" data-role="none" placeholder="Add the animal description"></textarea>
+            </div>
+        </div>
+    </section>
+
+    <section data-role="page" id="animal-add-page">
+        
+        <header data-role="header">
+            <h1>New Animal</h1>
             <ul>
                 <li><a href="#" data-rel="back" class="back-button"><i class="fa-solid fa-angle-left"></i></a></li>
                 <li class="flex-stretch"></li>
@@ -297,24 +311,16 @@
             </ul>
         </header>
 
-        <div data-role="main" >
-           
-                    
+        <div data-role="main" >           
             <form id="add-animal-form" class="overscroll edit-form" data-ajax="false">
                 
                     <!-- <div class="add-animal-img">
                         <i class="fa-solid fa-plus"></i>
                     </div> -->
-
-               
-                
+   
                 
             </form>
-              
-
         </div>
-        
-    
     </section>
 
     <section data-role="page" id="animal-edit-page">
@@ -329,14 +335,29 @@
         </header>
 
         <div data-role="main" >
-           
-                    
-                    <form id="edit-animal-form" class="edit-form" data-ajax="false">
-                       
-                    </form>
-              
 
+            <form id="edit-animal-form" class="edit-form" data-ajax="false">    
+            </form>
+
+            <!-- <ul class="display-flex none-style">
+                <li class="flex-stretch"></li>
+                <li class="flex-none">
+                    <a href="#" class="js-animal-delete">
+                        <i class="fa-solid fa-trash-can setting-icon"></i>
+                        <p>Delete animal</p>
+                    </a>
+                </li>
+            </ul> -->
+
+            <div class="delete-animal">
+                <a href="#" class="js-animal-delete display-flex flex-align-center">
+                    <div class="flex-stretch"></div>
+                    <i class="fa-solid fa-trash-can display-none delete-icon"></i>
+                    <p class="display-none">Delete animal</p>
+                </a>
             </div>
+
+        </div>
         
     
     </section>

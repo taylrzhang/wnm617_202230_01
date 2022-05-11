@@ -87,6 +87,8 @@ a{
 .display-inline-flex { display: inline-flex;}
 .display-inline-block { display: inline-block;}
 
+.none-style {list-style: none;padding: 0;margin: 0 1rem;}
+
 
 .flex-stretch { flex: 1 1 auto;}
 .flex-none { flex: none;}
@@ -314,7 +316,7 @@ a{
 
  .modal-drawer.top,
  .modal-drawer.bottom {
-    height: 60vh;
+    height: 24vh;
     width: 100%;
  }
 
@@ -356,11 +358,12 @@ a{
     margin-bottom: 1rem;
 }
 
-.pin-name {
-    font-size: var(--h1-font-size);
-    margin: 0;
-    padding-top: 1rem;
+
+.popup-container {
+    padding: 1rem;
+    max-width: 200px;
 }
+
 /* page layout */
 
 .ui-mobile .ui-page-active {
@@ -780,6 +783,20 @@ a{
     padding: .8rem 0;
     color: var(--body-color);
     
+}
+
+.choose-animal {
+    padding: 0 1rem;
+
+}
+
+.delete-icon {
+    padding-right: .5rem;
+}
+
+.delete-animal {
+    color: var(--accent-color);
+    padding-right: 1rem;
 }
 
 /* edit animal page */

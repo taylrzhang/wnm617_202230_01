@@ -58,29 +58,18 @@ const makeAnimalProfileImage = o => `
 
 const makeAnimalPopupModal = o => `
 
-<div class="modal-head display-flex">
-    <div class="flex-none">
-        <h1 class="modal-name">${o.name}</h1>
-    </div>
-    
-    <div class="flex-none"><a href="#animal-profile-page" class="form-button-small js-animal-jump" data-id="${o.id}">See all</a></div>
-</div>
 
-<div class="modal-body overscroll">
-    <div class="display-flex">
-        <div class="flex-column "><div class="modal-img"><img src="${o.img}" alt=""></div></div>
-        <div class="flex-column"><div class="modal-img"><img src="${o.img}" alt=""></div></div>
-    </div>
-    <div class="display-flex animal-title">
-        <h3>Details</h3>
-        
+
+<div class="modal-body overscroll display-flex js-animal-jump noclick-children" data-id="${o.id}">
+    <div class="flex-none">
+        <div class="modal-img"><img src="${o.img}" alt=""></div>
     </div>
     
-        <div class="modal-container">
+    
+        <div class="popup-container flex-none">
+        <h1>${o.name}</h1>
         <h6>Type</h6>
         <p>${o.type}</p>
-        <h6>Description</h6>
-        <p>${o.description}</p> 
         </div>
     
 

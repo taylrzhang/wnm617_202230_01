@@ -132,3 +132,16 @@ const AnimalAddPage = async() => {
 
    $("#add-animal-form").html(makeAnimalForm({},"animal-add"))
 }
+
+
+
+const ChooseLocationPage = async () => {
+   let map_el = await makeMap("#add-animal-location-page .map");
+
+   map_el.data("map").addListener("click",function(e){
+      console.log(e)
+      $("#location-lat").val(e.latLng.lat())
+      $("#location-lng").val(e.latLng.lng())
+      makeMarkers(map_el,[e.latLng])
+   })
+}
