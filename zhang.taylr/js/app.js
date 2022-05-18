@@ -16,6 +16,7 @@ $(() => {
 
          case "user-profile-page": UserProfilePage(); break;
          case "user-edit-page": UserEditPage(); break;
+         case "user-edit-photo-page": UserEditPhotoPage(); break;
 
          case "animal-profile-page": AnimalProfilePage(); break;
          case "animal-edit-page": AnimalEditPage(); break;
@@ -62,6 +63,63 @@ $(() => {
    })
 
    
+   // IMAGE UPLOAD CLICKS
+   .on("change",".imagepicker input", function(e){
+      checkUpload(this.files[0])
+      .then(d=>{
+         console.log(d)
+         let filename = `uploads/${d.result}`;
+         $(this).parent().prev().val(filename)
+         $(this).parent().css({
+            "background-image":`url(${filename})`
+         })
+      })
+   })
+   .on("click", ".js-submit-user-upload", function(e) {
+      let image = $("#user-edit-photo-image").val();
+      query({
+         type: "update_user_image",
+         params: [image, sessionStorage.userId]
+      }).then(d=>{
+         if(d.error) throw(d.error);
+         history.go(-1);
+      })
+   })
+
+
+
+
+   .on("change",".imagepicker-add input",function() {
+      var imagepicker = this;
+      readFiles(this.files,function(e) {
+        $(imagepicker).parent().before(
+          "<div class='thumbnail' style='background-image:url("+e.target.result+")'></div>"
+        )
+      })
+    })
+
+    .on("click", ".js-submit-animal-upload", function(e) {
+      let image = $("#animal-edit-photo-image").val();
+      query({
+         type: "update_animal_image",
+         params: [image, sessionStorage.animalId]
+      }).then(d=>{
+         if(d.error) throw(d.error);
+         
+      })
+   })
+
+
+
+
+
+
+   .on("click", "[data-filter]", function(e) {
+      let {filter,value} = $(this).data();
+      if(value=="") ListPage();
+      else checkFilter(filter,value);
+   })
+
 
 
 

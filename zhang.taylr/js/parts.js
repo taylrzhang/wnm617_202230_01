@@ -17,7 +17,10 @@ const makeAnimalList = templater(o=>`
 const makeUserProfilePage = o => `
 
 <div class="user-profile display-none">
-                <img src="${o.img}" alt="" >
+            <div class="edit-user-img">
+               <img src="${o.img}" alt="">
+               <a href="#user-edit-photo-page" class="image-overlay"><i class="fa-solid fa-pen-to-square"></i></a>
+            </div>
                 <p class="username">@${o.name}</p>
                 <a href="#user-edit-page"><div class="edit-profile-button">Edit Profile</div></a>
                 <div class="user-profile-info ">
@@ -58,23 +61,25 @@ const makeAnimalProfileImage = o => `
 
 const makeAnimalPopupModal = o => `
 
-
-
 <div class="modal-body overscroll display-flex js-animal-jump noclick-children" data-id="${o.id}">
     <div class="flex-none">
-        <div class="modal-img"><img src="${o.img}" alt=""></div>
+        <div class="modalpopup-img"><img src="${o.img}" alt=""></div>
     </div>
     
     
         <div class="popup-container flex-none">
         <h1>${o.name}</h1>
-        <h6>Type</h6>
+        
         <p>${o.type}</p>
         </div>
     
 
 </div>
 `;
+
+
+
+
 
 
 const FormControlInput = ({namespace,name,displayname,type,placeholder,value=""}) => {
