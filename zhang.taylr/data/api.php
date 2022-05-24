@@ -141,7 +141,7 @@ case "insert_location":
       `track_locations`
       (`animal_id`,`lat`,`lng`,`description`,`photo`,`icon`,`date_create`)
       VALUES
-      (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/008000?text=ICON', NOW())
+      (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=PHOTO', 'img/location_icon.png', NOW())
       ", $p, false);
    return ["id"=>$c->lastInsertId()];
 

@@ -160,6 +160,17 @@ const AnimalAddPage = async() => {
    $("#add-animal-form").html(makeAnimalForm({},"animal-add"))
 }
 
+const AnimalEditPhotoPage = async () => {
+   let {result:animals} = await query({
+      type:'animal_by_id',
+      params:[sessionStorage.animalId]
+   })
+   let [animal] = animals;
+
+   $("#animal-edit-photo-page .imagepicker").css({
+      "background-image":`url(${animal.img})`
+   })
+}
 
 
 
@@ -176,4 +187,23 @@ const ChooseLocationPage = async () => {
       $("#location-lng").val(e.latLng.lng())
       makeMarkers(map_el,[e.latLng])
    })
+}
+
+
+const ChooseAnimalPage = async () => {
+   let {result:animals} = await query({
+      type:'animals_by_user_id',
+      params:[sessionStorage.userId]
+   });
+
+   $("#location-animal").val(animals[0]?.id);
+   $("#location-start").val(-3);
+
+   $("#choose-animal-input").html(FormSelect(
+      animals.map(o=>({value:o.id,text:o.name})),
+      'choose-animal',
+      'select',
+      'Choose Animal',
+      ''
+   ));
 }

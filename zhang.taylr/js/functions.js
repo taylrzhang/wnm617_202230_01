@@ -35,14 +35,14 @@ const checkUpload = file => {
    }).then(d=>d.json());
 }
 
-function readFiles(files,callback,index=0) {
-   if (files && files[0]) {
-     let file = files[index++],
-         reader = new FileReader();
-     reader.onload = function(e){
-       callback(e);
-       if(index<files.length) readFiles(files,callback,index);
-     }
-     reader.readAsDataURL(file);
-   }
- }
+// function readFiles(files,callback,index=0) {
+//    if (files && files[0]) {
+//      let file = files[index++],
+//          reader = new FileReader();
+//      reader.onload = function(e){
+//        callback(e,file);
+//        if(index<files.length) readFiles(files,callback,index);
+//      }
+//      reader.readAsDataURL(file);
+//    }
+//  }

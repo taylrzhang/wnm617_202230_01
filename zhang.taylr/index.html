@@ -125,7 +125,7 @@
                         <h4>Add an animal to capture what you see.</h4>
                     </div>
                
-                    <div class="display-block"><a href="#choose-animal-page" class="add-button"><i class="fa-solid fa-square-plus" style="color: #fff;"></i></a></div>
+                    <div class="display-block"><a href="#choose-animal-page" class="add-button"><i class="fa-solid fa-square-plus"></i></a></div>
                 
              
         </header>
@@ -151,7 +151,7 @@
                 
                 <ul >
                     <li class="flex-stretch"></li>
-                    <li ><a href="#choose-animal-page" class="add-button"><i class="fa-solid fa-square-plus" style="color: #fff;"></i></a></li>
+                    <li ><a href="#choose-animal-page" class="add-button"><i class="fa-solid fa-square-plus"></i></a></li>
                 </ul >
             
         </header>
@@ -205,10 +205,9 @@
                     
                 </div>
                 <div class="modal-body overscroll">
-                    <div class="display-flex overscroll-x">
-                        <div class="flex-column">
-                            <div class="modal-img"></div>
-                        </div>   
+                    <div class="display-flex">
+                        <div class="modal-img"></div>
+                          
                     </div>
                     <div class="display-flex animal-title">
                         <div class="flex-none "><h3>Details</h3></div>
@@ -235,27 +234,22 @@
            <ul>
               <li><a href="#" data-rel="back">Cancel</a></li>
               <li class="flex-stretch"></li>
-              <!-- <li><a href="#add-animal-location-page">Next</a></li> -->
+              <li><a href="#add-animal-location-page">Next</a></li>
            </ul>
         </header>
         <div data-role="main">
-           <!-- <div class="search flex-stretch">
-            <form class="hotdog">
-                <input type="search" data-role="none" placeholder="Search">
-            </form>
-            </div> -->
-    
-            <!-- <div class="display-flex flex-align-center" style="padding: 1rem;">
-                <div class="flex-none"><h3>Saved ></h3></div>
-                <div class="flex-stretch"></div>
-                <div class="flex-none"><a href="#animal-add-page" class="form-button-small">Create</a></div>
-            </div> -->
-
+            <input type="hidden" id="location-animal">
+            <input type="hidden" id="location-start" value="-3">
             <div class="choose-animal">
-                <h3>Saved ></h3>
-                <input type="hidden" id="location-animal">
-                <a href="#animal-add-page" class="bottom-button">Create a new animal</a>
+                <h3>Select one in Saved ></h3>
+            <div class="form-control" id="choose-animal-input">
+                <div class="form-select">
+                    <select id="choose-animal-select" data-role="nones"></select>
+                </div>
             </div>
+            </div>
+                <a href="#animal-add-page" class="bottom-button">Create a new animal</a>
+            
         
         </div>
         
@@ -333,7 +327,7 @@
             <ul>
                 <li><a href="#" data-rel="back" class="back-button"><i class="fa-solid fa-angle-left"></i></a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#" class="form-button-small js-submit-animal-edit js-submit-animal-upload">Save</a></li>
+                <li><a href="#" class="form-button-small js-submit-animal-edit">Save</a></li>
             </ul>
         </header>
 
@@ -371,6 +365,26 @@
         </div>
         
     
+    </section>
+
+    <section data-role="page" id="animal-edit-photo-page">
+        <header data-role="header">
+            <h1>Change Photo</h1>
+            <ul>
+                <li><a href="#" data-rel="back">Cancel</a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#" class="js-submit-animal-upload  form-button-small">Save</a></li>
+            </ul>
+        </header>
+
+        <div data-role="main">
+            <input type="hidden" id="animal-edit-photo-image">
+            
+            <label class="imagepicker replace">
+                <input type='file' id="animal-edit-photo-input" data-role="none">
+                <div class="thumbnail imagepicker-animal"></div>
+            </label>
+        </div>
     </section>
 
     <section data-role="page" id="user-profile-page">
@@ -499,6 +513,7 @@
             <input type="hidden" id="user-edit-photo-image">
             <label class="imagepicker replace">
                 <input type='file' id="user-edit-photo-input" data-role="none">
+                <div class="thumbnail imagepicker-animal"></div>
             </label>
         </div>
     </section>

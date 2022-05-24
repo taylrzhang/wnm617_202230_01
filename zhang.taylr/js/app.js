@@ -21,8 +21,9 @@ $(() => {
          case "animal-profile-page": AnimalProfilePage(); break;
          case "animal-edit-page": AnimalEditPage(); break;
          case "animal-add-page": AnimalAddPage(); break;
+         case "animal-edit-photo-page": AnimalEditPhotoPage(); break;
 
-
+         case "choose-animal-page": ChooseAnimalPage(); break;
          case "add-animal-location-page": ChooseLocationPage(); break;
       }
    })
@@ -39,7 +40,11 @@ $(() => {
       e.preventDefault();
       submitUserSignup();
    })
-
+   .on("submit", "#list-search-form", function(e) {
+      e.preventDefault();
+      let s = $(this).find("input").val();
+      checkSearchForm(s);
+   })
  
     
     // FORM SUBMISSION CLICKS
@@ -72,7 +77,7 @@ $(() => {
          $(this).parent().prev().val(filename)
          $(this).parent().css({
             "background-image":`url(${filename})`
-         })
+         }).addClass("picked");
       })
    })
    .on("click", ".js-submit-user-upload", function(e) {
@@ -85,33 +90,16 @@ $(() => {
          history.go(-1);
       })
    })
-
-
-
-
-   .on("change",".imagepicker-add input",function() {
-      var imagepicker = this;
-      readFiles(this.files,function(e) {
-        $(imagepicker).parent().before(
-          "<div class='thumbnail' style='background-image:url("+e.target.result+")'></div>"
-        )
-      })
-    })
-
-    .on("click", ".js-submit-animal-upload", function(e) {
+   .on("click", ".js-submit-animal-upload", function(e) {
       let image = $("#animal-edit-photo-image").val();
       query({
          type: "update_animal_image",
          params: [image, sessionStorage.animalId]
       }).then(d=>{
          if(d.error) throw(d.error);
-         
+         history.go(-1);
       })
    })
-
-
-
-
 
 
    .on("click", "[data-filter]", function(e) {
@@ -119,6 +107,47 @@ $(() => {
       if(value=="") ListPage();
       else checkFilter(filter,value);
    })
+
+   .on("change", "#choose-animal-input select", function(e) {
+      $("#location-animal").val(this.value);
+   })
+
+
+   // .on("change",".imagepicker-add input",function() {
+   //    var imagepicker = this;
+   //    readFiles(this.files,function(e,file) {
+   //       checkUpload(file)
+   //       .then(d=>{
+   //          let filename = `uploads/${d.result}`;
+   //          // this needs to add to a comma list of images that were found
+   //          $(this).parent().prev().val(filename)
+
+   //          //let imgs = str.split(',');
+
+   //          // $(this).parent().css({
+   //          //    "background-image":`url(${filename})`
+   //          // })
+   //          $(imagepicker).parent().before(
+   //             "<div class='thumbnail' style='background-image:url("+e.target.result+")'></div>"
+   //           )
+   //       })
+        
+   //    })
+   //  })
+
+   //  .on("click", ".js-submit-animal-upload", function(e) {
+   //    let image = $("#animal-edit-photo-image").val();
+   //    query({
+   //       type: "update_animal_image",
+   //       params: [image, sessionStorage.animalId]
+   //    }).then(d=>{
+   //       if(d.error) throw(d.error);
+         
+   //    })
+   // })
+
+
+ 
 
 
 

@@ -4,20 +4,25 @@ const submitAnimalAdd = async () => {
    let name = $("#animal-add-name").val();
    let type = $("#animal-add-type").val();
    let description = $("#animal-add-description").val();
-
+   let image = $("#animal-add-image-url").val();
 
    console.log({name,type,description});
 
    if(name!="" && type!="" && description!="") {
       let {id,error} = await query({
          type: 'insert_animal',
-         params: [sessionStorage.userId,name,type,description]
+         params: [sessionStorage.userId,
+            name,
+            type,
+            description,
+            image==='' ? 'https://via.placeholder.com/400/?text=ANIMAL' : image
+         ]
       });
 
       if(error) throw(error);
 
       sessionStorage.animalId = id;
-      history.go(-2);
+      history.go(-1);
 
    } else {
       throw("Not all data present");
@@ -106,5 +111,26 @@ const submitLocationAdd = async () => {
 
    if(error) throw(error);
 
-   history.go(-2);
+   history.go(+$("#location-start").val());
+}
+
+const checkSearchForm = async (s) => {
+   let {result:animals,error} = await query({
+      type: 'search_animals',
+      params: [s, sessionStorage.userId]
+   });
+
+   if(error) throw(error);
+
+   makeAnimalListSet(animals);
+}
+const checkFilter = async (f,v) => {
+   let {result:animals,error} = await query({
+      type: 'filter_animals',
+      params: [f, v, sessionStorage.userId]
+   });
+
+   if(error) throw(error);
+
+   makeAnimalListSet(animals);
 }
