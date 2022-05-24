@@ -80,6 +80,7 @@ $(() => {
          }).addClass("picked");
       })
    })
+   
    .on("click", ".js-submit-user-upload", function(e) {
       let image = $("#user-edit-photo-image").val();
       query({

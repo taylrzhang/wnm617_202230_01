@@ -151,7 +151,7 @@
                 
                 <ul >
                     <li class="flex-stretch"></li>
-                    <li ><a href="#choose-animal-page" class="add-button"><i class="fa-solid fa-square-plus"></i></a></li>
+                    <li ><a href="#animal-add-page" class="add-button"><i class="fa-solid fa-square-plus"></i></a></li>
                 </ul >
             
         </header>
@@ -307,7 +307,12 @@
         </header>
 
         <div data-role="main" >
-            
+            <div>
+                <input type="hidden" id="animal-add-image-url">
+                <label class="imagepicker imagepicker-replace thumbnail" id="animal-add-image-picker">
+                    <input type='file' data-role="none">
+                 </label>
+            </div>
 
             <form id="add-animal-form" class="overscroll edit-form" data-ajax="false">
                 
@@ -332,27 +337,10 @@
         </header>
 
         <div data-role="main" >
-            <form enctype="multipart/form-data" >
-                <input type="hidden" id="animal-edit-photo-image">
-                <div class="animal-images">
-                  <label class="imagepicker-animal imagepicker-add thumbnail">
-                    <input type='file' id="animal-edit-photo-input" multiple data-role="none">
-                  </label>
-                </div>
-                
-              </form>
-            <form id="edit-animal-form" class="edit-form" data-ajax="false">    
+            
+            <form id="edit-animal-form" class="edit-form overscroll" data-ajax="false">    
             </form>
 
-            <!-- <ul class="display-flex none-style">
-                <li class="flex-stretch"></li>
-                <li class="flex-none">
-                    <a href="#" class="js-animal-delete">
-                        <i class="fa-solid fa-trash-can setting-icon"></i>
-                        <p>Delete animal</p>
-                    </a>
-                </li>
-            </ul> -->
 
             <div class="delete-animal">
                 <a href="#" class="js-animal-delete display-flex flex-align-center">
@@ -382,7 +370,7 @@
             
             <label class="imagepicker replace">
                 <input type='file' id="animal-edit-photo-input" data-role="none">
-                <div class="thumbnail imagepicker-animal"></div>
+                
             </label>
         </div>
     </section>
@@ -513,7 +501,6 @@
             <input type="hidden" id="user-edit-photo-image">
             <label class="imagepicker replace">
                 <input type='file' id="user-edit-photo-input" data-role="none">
-                <div class="thumbnail imagepicker-animal"></div>
             </label>
         </div>
     </section>
