@@ -156,21 +156,20 @@
             
         </header>
 
-        <div data-role="main" class="overscroll">
+        <div data-role="main">
             
-            <div class="display-flex">
-                <div class="search flex-stretch">
-                    <form class="hotdog">
-                        <input type="search" data-role="none" placeholder="Search"></form>
-                </div>
+            
+            <div class="search-bar flex-none">
+                <form data-ajax="false" id="list-search-form" class="hotdog">
+                    <input type="search" data-role="none" placeholder="Search">
+                </form>
+            </div>
+            <div class="filter-bar flex-none">
             </div>
 
-        <div class="animal-profile-list">
-           
-               <ul class="animal-list">      
-                </ul>
-          
-        </div>
+               
+            <ul class="animal-list"></ul>  
+            
       
         </div>
 
@@ -241,7 +240,7 @@
             <input type="hidden" id="location-animal">
             <input type="hidden" id="location-start" value="-3">
             <div class="choose-animal">
-                <h3>Select one in Saved ></h3>
+                <p>Select one in Saved ></p>
             <div class="form-control" id="choose-animal-input">
                 <div class="form-select">
                     <select id="choose-animal-select" data-role="nones"></select>
@@ -309,7 +308,7 @@
         <div data-role="main" >
             <div>
                 <input type="hidden" id="animal-add-image-url">
-                <label class="imagepicker imagepicker-replace thumbnail" id="animal-add-image-picker">
+                <label class="imagepicker replace thumbnail" id="animal-add-image-picker">
                     <input type='file' data-role="none">
                  </label>
             </div>
@@ -366,6 +365,7 @@
         </header>
 
         <div data-role="main">
+            <h4 style="text-align: center;">Tap anywhere to upload photo.</h4>
             <input type="hidden" id="animal-edit-photo-image">
             
             <label class="imagepicker replace">
@@ -498,6 +498,7 @@
         </header>
 
         <div data-role="main">
+            <h4 style="text-align: center;">Tap anywhere to upload photo.</h4>
             <input type="hidden" id="user-edit-photo-image">
             <label class="imagepicker replace">
                 <input type='file' id="user-edit-photo-input" data-role="none">

@@ -3,19 +3,19 @@
 const ExplorePage = async() => { 
     
 
+   let {result,error} = await query({
+      type:'explore_animal_locations',
+      params:[sessionStorage.userId]
+   });
+   console.log(result);
 
-    let {result} = await query({
-        type:'explore_animal_locations',
-        params:[sessionStorage.userId]
-     });
-     console.log(result);
+   if(error) throw(error);
 
-     
-     let valid_animals = result.reduce((r,o)=>{
-        o.icon = o.img;
-        if(o.lat && o.lng) r.push(o);
-        return r;
-     },[]);
+   let valid_animals = result.reduce((r,o)=>{
+      o.icon = o.img;
+      if(o.lat && o.lng) r.push(o);
+      return r;
+   },[]);
   
      let map_el = await makeMap("#explore-page .map");
      makeMarkers(map_el,valid_animals)
@@ -60,7 +60,7 @@ const ListPage = async() => {
  
  console.log(animals)
 
- $("#list-page .animal-list").html(makeAnimalList(animals));
+ makeAnimalListSet(animals);
 }
 
 
@@ -143,10 +143,6 @@ const UserEditPhotoPage = async () => {
    let [animal] = animals;
 
    $("#edit-animal-form").html(makeAnimalForm(animal,"animal-edit"))
-
-   $("#animal-edit-photo-page .imagepicker-animal").css({
-      "background-image":`url(${animal.img})`
-   });
 }
 
 
@@ -185,7 +181,7 @@ const ChooseLocationPage = async () => {
       console.log(e)
       $("#location-lat").val(e.latLng.lat())
       $("#location-lng").val(e.latLng.lng())
-      makeMarkers(map_el,[e.latLng])
+      makeRegularMarkers(map_el,[e.latLng])
    })
 }
 

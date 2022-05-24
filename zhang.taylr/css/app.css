@@ -100,7 +100,7 @@ a{
 .overscroll { overflow: auto;}
 
 .floater { position: absolute;}
-.bottom {bottom: 1rem;}
+.f {bottom: 1rem;}
 .top {top: 1rem;}
 .right {right: .5rem;}
 .relative { position: relative;}
@@ -198,6 +198,7 @@ a{
     line-height: 3rem;
     padding: 0 2em;
     border: solid 1px var(--text-color-light);
+    width: 100%;
  }
 
  .hotdog input {
@@ -213,9 +214,25 @@ a{
     background-color: transparent;
  }
 
- .search {
-     padding: 1rem;
+ .search-bar {
+     padding: 0 1rem;
+     z-index: 2;
+    display: flex;
  }
+
+ .filter-bar {
+    z-index: 1;
+    display: flex;
+    padding: 0 1em;
+    gap: 1em;
+    font-weight: bold;
+    width: 100%;
+    height: var(--header-height);
+    overflow: auto;
+    color: var(--text-color-light);
+    align-items: center;
+}
+
 
  .reminder {
      color: var(--accent-color);
@@ -293,7 +310,7 @@ a{
     display: flex;
     flex-direction: column;
     transition: all 0.3s;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
  }
  
  .modal-drawer-fixed {
@@ -347,11 +364,18 @@ a{
      margin-bottom: 0.5rem;
  }
 
+ .map img {
+    object-fit: cover;
+    object-position: center;
+ }
+
  .modalpopup-img>img{
      width: 120px;
      height: 120px;
      border-radius: 5px;
      margin: 1rem 4px;
+     object-fit: cover;
+    object-position: center;
  }
 
  .modal-container {
@@ -375,6 +399,13 @@ a{
 .popup-container {
     padding: 1rem;
     max-width: 200px;
+}
+
+.popup-container p {
+    color: #aaa;
+}
+.popup-container h1 {
+    margin-top: 1rem;
 }
 
 /* page layout */
@@ -645,7 +676,7 @@ a{
     color: #fff;
 }
 
-.close-button {
+.edit-animal-image-button {
     font-size: 1.4rem;
     margin: .5rem 0;
     color: var(--body-color);
@@ -686,33 +717,10 @@ a{
 .map {
     height: 100%;
 }
-.map-img {
-    height: 86px;
+img[src$="#custom_marker"]{
+    border: 4px solid #F9F9F9 !important;
+    border-radius:1rem;
 }
-.map-img img{
-    position: relative;
-    background: var(--text-color-light);
-    width: 70px;
-    height: 70px;
-    border: solid 4px var(--body-color);
-    border-radius: 10px;
-    box-shadow: 0 0 6px rgb(0 0 0 / 25%);
-
-}
-
-
-
-.map-img::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: calc(50% - 10px);
-    background: var(--body-color);
-    width: 20px;
-    height: 12px;
-    
-    clip-path: polygon(0 0, 100% 0, 50% 100%);
-  }
 
 
 
@@ -720,24 +728,32 @@ a{
 
 /* animal profile list */
 
-.animal-profile-list {
+/* .animal-profile-list {
     flex: 1;
-    position: relative;
+    
+} */
+
+#list-page [data-role="main"] {
+    display: flex;
+    flex-direction: column;
 }
 
-.animal-profile-list ul {
+.animal-list {
+    list-style-type: none;
     position: relative;
     list-style: none;
     margin: 0;
     padding: 0;
-    
+    height: 100%;
+    width: 100%;
+    overflow: auto;
 }
 
-.animal-profile-list li a{
-    
+.animal-list-item a{
     margin: 1rem;
     align-items: center;
     display: flex; 
+    overflow: hidden;
 }
 
 .animal-list-img img {
@@ -746,6 +762,7 @@ a{
     height: 10vh;
     border-radius: 0.5em;
     object-fit: cover;
+    object-position: center;
 }
 .animal-list-body {
     padding: 1em;
@@ -777,20 +794,6 @@ a{
 
 
 
-.viewed-time {
-    color: var(--text-color-light);
-    background-color: var(--body-color);
-    border-radius: 2rem;
-    padding: 0 1rem;
-    font-size: 1.3rem;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-
-}
-
-.viewed-time i {
-    padding-right: .4rem;
-}
-
 .bottom-button {
     background-color: var(--first-color);
     bottom: 0;
@@ -809,15 +812,15 @@ a{
 }
 
 .choose-animal {
-    padding: 0 1rem;
+    padding: 1rem;
 
 }
 
 .form-select select {
-    border: 1px solid var(--text-color-light);
-    padding: 0.5em 1em;
+    border: 2px solid var(--first-color);
+    padding: 0.8rem 1rem;
     font: inherit;
-    border-radius: 4px;
+    border-radius: 14px;
     width: 100%;
     -webkit-appearance: none;
     outline: 0;
@@ -828,7 +831,7 @@ a{
 .form-select::after {
    content: '▼';
    position: absolute;
-   right: 0.5em;
+   right: 1rem;
    top: 50%;
    transform: translateY(-50%);
    font-size: 0.8em;
@@ -957,7 +960,7 @@ a{
     
   } 
 
-  .imagepicker-animal {
+  /* .imagepicker-animal {
     cursor:pointer;
     color:var(--text-color-light);
     background: rgba(255, 255, 255, 0.2);
@@ -978,7 +981,7 @@ a{
     transform:translate(-50%,-50%);
     color: rgb(0 0 0 / 40%);
     z-index:-1;
-  }
+  } */
 
  
 

@@ -172,8 +172,10 @@ $(() => {
    .on("click",".js-animal-delete", function(e) {
       submitDeleteAnimal();
    })
+
    .on("click",".js-location-choose-animal", function(e) {
       $("#location-animal").val(sessionStorage.animalId)
+      $("#location-start").val(-2);
    })
 
 

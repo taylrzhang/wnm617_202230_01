@@ -114,49 +114,70 @@ function makeStatement($data) {
 
 /*INSERT*/
 
-case "insert_user":
-   $r = makeQuery($c,"SELECT id FROM `track_users` WHERE `username`=? OR `email` = ?",[ $p[0], $p[1] ]);
-   if(count($r['result'])) return ["error"=>"Username or Email already exists"];
+      case "insert_user":
+         $r = makeQuery($c,"SELECT id FROM `track_users` WHERE `username`=? OR `email` = ?",[ $p[0], $p[1] ]);
+         if(count($r['result'])) return ["error"=>"Username or Email already exists"];
 
-   makeQuery($c,"INSERT INTO
-      `track_users`
-      (`username`,`email`,`password`,`img`,`date_create`)
-      VALUES
-      (?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
-      ", $p, false);
-   
-   return ["id"=>$c->lastInsertId()];
+         makeQuery($c,"INSERT INTO
+            `track_users`
+            (`username`,`email`,`password`,`img`,`date_create`)
+            VALUES
+            (?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
+            ", $p, false);
+         
+         return ["id"=>$c->lastInsertId()];
 
-case "insert_animal":
-   makeQuery($c,"INSERT INTO
-      `track_animals`
-      (`user_id`,`name`,`type`,`description`,`img`,`date_create`)
-      VALUES
-      (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=ANIMAL', NOW())
-      ", $p, false);
-   return ["id"=>$c->lastInsertId()];
+      case "insert_animal":
+         makeQuery($c,"INSERT INTO
+            `track_animals`
+            (`user_id`,`name`,`type`,`description`,`img`,`date_create`)
+            VALUES
+            (?, ?, ?, ?, ?, NOW())
+                  ", $p, false);
+         return ["id"=>$c->lastInsertId()];
 
-case "insert_location":
-   makeQuery($c,"INSERT INTO
-      `track_locations`
-      (`animal_id`,`lat`,`lng`,`description`,`photo`,`icon`,`date_create`)
-      VALUES
-      (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=PHOTO', 'img/location_icon.png', NOW())
-      ", $p, false);
-   return ["id"=>$c->lastInsertId()];
+      case "insert_location":
+         makeQuery($c,"INSERT INTO
+            `track_locations`
+            (`animal_id`,`lat`,`lng`,`description`,`photo`,`icon`,`date_create`)
+            VALUES
+            (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=PHOTO', 'img/location_icon.png', NOW())
+            ", $p, false);
+         return ["id"=>$c->lastInsertId()];
 
-/*UPDATE*/
 
-case "update_user":
-   $r = makeQuery($c,"UPDATE
-      `track_users`
-      SET
-         `name` = ?,
-         `username` = ?,
-         `email` = ?
-      WHERE `id` = ?
-      ",$p,false);
-   if(isset($r['error'])) return $r;
+/* SEARCH */
+
+   case "search_animals":
+      $p = ["%$p[0]%", $p[1]];
+      return makeQuery($c,"SELECT *
+         FROM `track_animals`
+         WHERE
+            `name` LIKE ? AND
+            `user_id` = ?
+         ",$p);
+
+   case "filter_animals":
+      return makeQuery($c,"SELECT *
+         FROM `track_animals`
+         WHERE
+            `$p[0]` = ? AND
+            `user_id` = ?
+         ",[$p[1],$p[2]]);
+
+
+/* UPDATE */
+
+   case "update_user":
+      $r = makeQuery($c,"UPDATE
+         `track_users`
+         SET
+            `name` = ?,
+            `username` = ?,
+            `email` = ?
+         WHERE `id` = ?
+         ",$p,false);
+      if(isset($r['error'])) return $r;
    return ["result"=>"Success"];
 
    case "update_password":
