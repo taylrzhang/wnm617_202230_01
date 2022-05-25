@@ -21,14 +21,14 @@ const makeUserProfilePage = o => `
                <img src="${o.img}" alt="">
                <a href="#user-edit-photo-page" class="image-overlay"><i class="fa-solid fa-pen-to-square"></i></a>
             </div>
-                <p class="username">@${o.name}</p>
+                <p class="username">${o.name}</p>
                 <a href="#user-edit-page"><div class="edit-profile-button">Edit Profile</div></a>
                 <div class="user-profile-info ">
                     <div class="display-flex flex-align-center">
                         <div class="flex-none info-icon"><i class="fa-solid fa-user"></i></div>
                         <div class="flex-none">
                             <h6>Username</h6>
-                            <p>${o.username}</p>
+                            <p>@${o.username}</p>
                         </div>
                     </div>
                     <div class="display-flex flex-align-center">
